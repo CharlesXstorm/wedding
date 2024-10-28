@@ -7,17 +7,116 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+} */
+
+@font-face {
+  font-family: "CremeEspana";
+  src: url("./fonts/CremeEspana.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* .home{
+  @apply h-[100vh] w-full overflow-hidden;
+} */
+
+.loader{
+  @apply fixed top-0 z-[12] bg-black w-full h-[100vh] pointer-events-none transition-all
+}
+
+.home__image {
+  @apply w-full h-full;
+}
+
+.home__text {
+  @apply absolute bottom-[5em] lg:bottom-[0] flex flex-col justify-center w-full text-white;
+}
+
+.title{
+  @apply translate-y-[100px] opacity-0;
+}
+
+.home__text__title {
+  @apply flex flex-col lg:flex-row leading-[1.2em] lg:gap-2 font-['CremeEspana'] items-center text-[4em] md:text-[6em] xl:text-[8em];
+}
+
+.home__text p {
+  @apply flex justify-center;
+}
+
+.home__text__para {
+  @apply w-full flex justify-center items-center;
+}
+
+.home__text__p1 {
+  @apply absolute rounded-full px-4 py-2 border-[2px] opacity-0 translate-y-[80px];
+}
+
+.home__text__p2 {
+  @apply opacity-[0.2] font-[600] text-[6em] md:text-[12em] xl:text-[14em] opacity-0;
+}
+
+.nav {
+  @apply fixed top-0 bg-[transparent] z-[10] text-white text-sm lg:text-lg w-full p-[2em] flex justify-center lg:justify-end gap-[2em];
+}
+
+.pages {
+  @apply h-[100vh] w-full sticky bottom-0 overflow-hidden;
+}
+
+.pages > p {
+  @apply text-[12em] w-full flex justify-center items-center;
+}
+
+.home {
+  @apply z-[6];
+}
+
+.story {
+  @apply bg-[orange] z-[5];
+}
+
+.photo {
+  @apply bg-[red] z-[4];
+}
+
+.wish {
+  @apply bg-[blue];
+}
+
+.scrollicon {
+  @apply fixed bottom-0 flex w-full justify-center p-[2em];
+}
+
+.cursor {
+  transform: translateY(0px);
+  animation: cursorMove 0.6s ease-out infinite;
+}
+
+@keyframes cursorMove {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(5px);
+  }
 }
 
 @layer utilities {
