@@ -4,9 +4,10 @@ import HomeImage from "@/components/HomeImage";
 import HomeText from "@/components/HomeText";
 import Loader from "@/components/Loader";
 import Nav from "@/components/Nav";
+import HomeBtn from "@/components/ui/HomeBtn";
 import Portal from "@/components/ui/Portal";
 import Scrollicon from "@/components/ui/Scrollicon";
-import gsap from "gsap";
+// import gsap from "gsap";
 import LocomotiveScroll, { ILocomotiveScrollOptions } from "locomotive-scroll";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
@@ -22,24 +23,24 @@ export default function Home() {
   // }
 
   useEffect(() => {
-    gsap.to(".title", {
-      y: 0,
-      opacity: 1,
-      duration: 0.6,
-      delay:.4,
-      stagger: 0.1,
-    });
-    gsap.to(".home__text__p1", {
-      y: 0,
-      opacity: 1,
-      duration: 0.6,
-      delay:0.8,
-    });
-    gsap.to(".home__text__p2", {
-      opacity: 0.2,
-      duration: 2,
-      delay:.6,
-    });
+    // gsap.to(".title", {
+    //   y: 0,
+    //   opacity: 1,
+    //   duration: 0.6,
+    //   delay:.4,
+    //   stagger: 0.1,
+    // });
+    // gsap.to(".home__text__p1", {
+    //   y: 0,
+    //   opacity: 1,
+    //   duration: 0.6,
+    //   delay:0.8,
+    // });
+    // gsap.to(".home__text__p2", {
+    //   opacity: 0.2,
+    //   duration: 2,
+    //   delay:.6,
+    // });
 
     // window.addEventListener("scroll",mainScroll)
 
@@ -58,9 +59,10 @@ export default function Home() {
     <main id="_main" ref={mainRef} data-scroll-container>
       {<Loader/>}
       <Nav />
-      <div className="home pages" data-scroll-section>
+      <HomeBtn/>
+      <div id="home_" className="home pages" data-scroll-section>
         <HomeImage />
-        <HomeText />
+       <HomeText />
         <Scrollicon />
       </div>
 

@@ -50,7 +50,7 @@ body {
 }
 
 .title{
-  @apply translate-y-[100px] opacity-0;
+  @apply translate-y-[100px];
 }
 
 .home__text__title {
@@ -66,11 +66,15 @@ body {
 }
 
 .home__text__p1 {
-  @apply absolute rounded-full px-4 py-2 border-[2px] opacity-0 translate-y-[80px];
+  @apply absolute rounded-full px-4 py-2 border-[2px];
 }
 
 .home__text__p2 {
-  @apply opacity-[0.2] font-[600] text-[6em] md:text-[12em] xl:text-[14em] opacity-0;
+  @apply opacity-[0.2] text-[orange] font-[600] text-[6em] md:text-[12em] xl:text-[14em];
+}
+
+.homeBtn{
+  @apply fixed bottom-[0] left-[0] z-[10] p-8 w-[8em] xl:w-[10em] rotate-[-30deg]
 }
 
 .nav {
