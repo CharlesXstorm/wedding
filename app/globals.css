@@ -37,6 +37,10 @@ body {
   @apply h-[100vh] w-full overflow-hidden;
 } */
 
+.datebtn{
+  @apply rounded-full px-4 py-2 border-[2px] pointer-events-auto;
+}
+
 .loader{
   @apply fixed top-0 z-[12] bg-black w-full h-[100vh] pointer-events-none transition-all
 }
@@ -46,7 +50,7 @@ body {
 }
 
 .home__text {
-  @apply absolute bottom-[5em] lg:bottom-[0] flex flex-col justify-center w-full text-white;
+  @apply absolute bottom-[5em] lg:bottom-[0] flex flex-col justify-center w-full text-white pointer-events-none;
 }
 
 .title{
@@ -66,7 +70,7 @@ body {
 }
 
 .home__text__p1 {
-  @apply absolute rounded-full px-4 py-2 border-[2px];
+  @apply absolute;
 }
 
 .home__text__p2 {

@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useStore } from "@/store";
+import DateButton from "./ui/DateButton";
 
 const titleVariants = {
   hidden: { opacity: 0 },
@@ -51,9 +52,10 @@ const HomeText = () => {
 
   return (
     <div className="home__text">
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         {showText && (
           <motion.p
+            key="1"
             variants={titleVariants}
             initial="hidden"
             animate="visible"
@@ -72,15 +74,15 @@ const HomeText = () => {
         )}
 
         {showText && (
-          <motion.div className="home__text__para">
-            <motion.p
+          <motion.div key="2" className="home__text__para">
+            <motion.div
               variants={title2Variants}
               initial="hidden"
               animate="visible"
               className="home__text__p1"
             >
-              save the date.
-            </motion.p>
+              <DateButton />
+            </motion.div>
             <motion.p
               variants={title3Variants}
               initial="hidden"
