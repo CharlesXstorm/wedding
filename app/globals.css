@@ -102,7 +102,41 @@ body {
 }
 
 .photo {
-  @apply bg-[red] z-[4];
+  @apply bg-black z-[4];
+}
+
+.photo__cont{
+  @apply relative flex flex-col justify-center items-center h-full;
+}
+
+.photo__title{
+  @apply text-white font-['CremeEspana'] text-[4em];
+}
+
+.photo__page1{
+  @apply absolute top-0 left-0 w-full h-full;
+}
+
+.photo__pics{
+  @apply absolute overflow-hidden;
+}
+
+.pic1{
+  top: 60%;
+  left: 10%;
+  clip-path: polygon(9% 0%, 46% 10%, 85% 6%, 98% 20%, 82% 83%, 31% 67%, 4% 19%);
+}
+
+.pic2{
+  top: 20%;
+  right: 10%;
+  clip-path: polygon(2% 1%, 36% 6%, 82% 2%, 97% 19%, 75% 65%, 81% 75%, 64% 88%, 9% 68%, 0% 25%);
+}
+
+.pic3{
+  bottom: 10%;
+  left: 40%;
+  clip-path: polygon(0% 15%, 28% 0%, 99% 15%, 96% 55%, 42% 82%, 26% 55%, 0% 46%);
 }
 
 .wish {

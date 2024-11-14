@@ -4,9 +4,11 @@ import HomeImage from "@/components/HomeImage";
 import HomeText from "@/components/HomeText";
 import Loader from "@/components/Loader";
 import Nav from "@/components/Nav";
+import Photo from "@/components/Photo";
 import HomeBtn from "@/components/ui/HomeBtn";
 import Portal from "@/components/ui/Portal";
 import Scrollicon from "@/components/ui/Scrollicon";
+import Wish from "@/components/Wish";
 // import gsap from "gsap";
 import LocomotiveScroll, { ILocomotiveScrollOptions } from "locomotive-scroll";
 import Image from "next/image";
@@ -17,7 +19,7 @@ export default function Home() {
   const mainRef = useRef(null);
 
   // const mainScroll =(e)=>{
- 
+
   //     console.log(e)
 
   // }
@@ -57,12 +59,12 @@ export default function Home() {
 
   return (
     <main id="_main" ref={mainRef} data-scroll-container>
-      {<Loader/>}
+      {<Loader />}
       <Nav />
-      <HomeBtn/>
+      <HomeBtn />
       <div id="home_" className="home pages" data-scroll-section>
         <HomeImage />
-       <HomeText />
+        <HomeText />
         <Scrollicon />
       </div>
 
@@ -71,11 +73,11 @@ export default function Home() {
       </div>
 
       <div id="photo" className="photo pages">
-        <p>photo</p>
+        <Photo />
       </div>
 
       <div id="wish" className="wish pages">
-        <p>wish</p>
+        <Wish />
       </div>
     </main>
   );
