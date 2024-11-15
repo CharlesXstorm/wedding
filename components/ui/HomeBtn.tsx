@@ -1,6 +1,5 @@
 "use client";
-import HomeSVG from "@/svg/HomeSVG";
-// import Link from "next/link";
+import { HomeSVG } from "@/svg";
 import React from "react";
 
 const HomeBtn = () => {

@@ -85,6 +85,14 @@ body {
   @apply fixed top-0 bg-[transparent] z-[10] text-white text-sm lg:text-lg w-full p-[2em] flex justify-center lg:justify-end gap-[2em];
 }
 
+.navbtn{
+  @apply absolute flex justify-between top-0 left-0 w-full h-full z-[20] p-[2em] md:p-[4em];
+}
+
+.navbtn > button{
+  @apply w-[2em] lg:w-[5em]
+}
+
 .pages {
   @apply h-[100vh] w-full sticky bottom-0 overflow-hidden;
 }
@@ -110,7 +118,7 @@ body {
 }
 
 .photo__title{
-  @apply text-white font-['CremeEspana'] text-[4em];
+  @apply relative z-[15] text-white font-['CremeEspana'] text-[4em];
 }
 
 .photo__page1{
@@ -119,6 +127,10 @@ body {
 
 .photo__pics{
   @apply absolute overflow-hidden;
+}
+
+.photo__image{
+  @apply md:w-[10em];
 }
 
 .pic1{
@@ -136,6 +148,24 @@ body {
 .pic3{
   bottom: 10%;
   left: 40%;
+  clip-path: polygon(0% 15%, 28% 0%, 99% 15%, 96% 55%, 42% 82%, 26% 55%, 0% 46%);
+}
+
+.pic4{
+  top: 20%;
+  left: 20%;
+  clip-path: polygon(9% 0%, 46% 10%, 85% 6%, 98% 20%, 82% 83%, 31% 67%, 4% 19%);
+}
+
+.pic5{
+  bottom: 10%;
+  right: 20%;
+  clip-path: polygon(2% 1%, 36% 6%, 82% 2%, 97% 19%, 75% 65%, 81% 75%, 64% 88%, 9% 68%, 0% 25%);
+}
+
+.pic6{
+  top: 10%;
+  left: 50%;
   clip-path: polygon(0% 15%, 28% 0%, 99% 15%, 96% 55%, 42% 82%, 26% 55%, 0% 46%);
 }
 
@@ -164,5 +194,23 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@media only screen and (max-width: 480px){
+  .pic4{
+    top: 20%;
+    left: 10%;
+    clip-path: polygon(9% 0%, 46% 10%, 85% 6%, 98% 20%, 82% 83%, 31% 67%, 4% 19%);
+  }
+  .pic5{
+    bottom: 25%;
+    right: 6%;
+    clip-path: polygon(2% 1%, 36% 6%, 82% 2%, 97% 19%, 75% 65%, 81% 75%, 64% 88%, 9% 68%, 0% 25%);
+  }
+  .pic6{
+    top: 10%;
+    left: 30%;
+    clip-path: polygon(0% 15%, 28% 0%, 99% 15%, 96% 55%, 42% 82%, 26% 55%, 0% 46%);
   }
 }

@@ -1,11 +1,7 @@
-import Image from "next/image";
 import React from "react";
-
-const photoPage1 = [
-  { className: "pic1", src: "/images/albums/photo1.jpg", alt: "photo1" },
-  { className: "pic2", src: "/images/albums/photo2.jpg", alt: "photo2" },
-  { className: "pic3", src: "/images/albums/photo3.jpg", alt: "photo3" },
-];
+import { photoPage1 } from "@/constant";
+import Image from "next/image";
+import { LeftSVG } from "@/svg";
 
 interface photoitemProps {
   className: string;
@@ -13,11 +9,29 @@ interface photoitemProps {
   alt: string;
 }
 
+const Next =()=>{
+
+  return(
+    <>
+
+    </>
+  )
+}
+
+const Prev =()=>{
+
+  return(
+    <button>
+      <LeftSVG />
+    </button>
+  )
+}
+
 const PhotoItem: React.FC<photoitemProps> = ({ className, src, alt }) => {
   return (
     <div className={`photo__pics ${className}`}>
       <Image
-        className="object-contain"
+        className="photo__image object-contain"
         src={src}
         width={120}
         height={120}
@@ -41,6 +55,11 @@ const Photo = () => {
             alt={item.alt}
           />
         ))}
+      </div>
+
+      <div className="navbtn">
+      <Next />
+      <Prev />
       </div>
     </div>
   );
