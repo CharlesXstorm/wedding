@@ -37,12 +37,12 @@ body {
   @apply h-[100vh] w-full overflow-hidden;
 } */
 
-.datebtn{
+.datebtn {
   @apply rounded-full px-4 py-2 border-[2px] pointer-events-auto;
 }
 
-.loader{
-  @apply fixed top-0 z-[12] bg-black w-full h-[100vh] pointer-events-none transition-all
+.loader {
+  @apply fixed top-0 z-[12] bg-black w-full h-[100vh] pointer-events-none transition-all;
 }
 
 .home__image {
@@ -53,7 +53,7 @@ body {
   @apply absolute bottom-[5em] lg:bottom-[0] flex flex-col justify-center w-full text-white pointer-events-none;
 }
 
-.title{
+.title {
   @apply translate-y-[100px];
 }
 
@@ -77,20 +77,20 @@ body {
   @apply opacity-[0.2] text-[orange] font-[600] text-[6em] md:text-[12em] xl:text-[14em];
 }
 
-.homeBtn{
-  @apply fixed bottom-[0] left-[0] z-[10] p-8 w-[8em] xl:w-[10em] rotate-[-30deg]
+.homeBtn {
+  @apply fixed bottom-[0] left-[0] z-[10] p-8 w-[8em] xl:w-[10em] rotate-[-30deg];
 }
 
 .nav {
   @apply fixed top-0 bg-[transparent] z-[10] text-white text-sm lg:text-lg w-full p-[2em] flex justify-center lg:justify-end gap-[2em];
 }
 
-.navbtn{
+.navbtn {
   @apply absolute flex justify-between top-0 left-0 w-full h-full z-[20] p-[2em] md:p-[4em];
 }
 
-.navbtn > button{
-  @apply w-[2em] lg:w-[5em]
+.navbtn > button {
+  @apply flex self-end md:self-center w-[4em] lg:w-[5em] mb-[5em];
 }
 
 .pages {
@@ -113,60 +113,101 @@ body {
   @apply bg-black z-[4];
 }
 
-.photo__cont{
+.photo__cont {
   @apply relative flex flex-col justify-center items-center h-full;
 }
 
-.photo__title{
+.photo__title {
   @apply relative z-[15] text-white font-['CremeEspana'] text-[4em];
 }
 
-.photo__page1{
+.photo__page1 {
   @apply absolute top-0 left-0 w-full h-full;
 }
 
+/* .photo__pics {
+  @apply absolute flex  pointer-events-auto filter lg:hover:grayscale transition-all transition-[filter] duration-[5] overflow-hidden;
+} */
+
 .photo__pics{
-  @apply absolute overflow-hidden;
+  position: absolute;
+  display: flex;
+  pointer-events: auto;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out, opacity 0.4s linear;
 }
 
-.photo__image{
-  @apply md:w-[10em];
+.photo__image {
+  @apply w-full;
+  /* @apply md:w-[10em]; */
 }
 
-.pic1{
-  top: 60%;
-  left: 10%;
+.picinit1 {
+  top: calc(50vh - 5em);
+  left: calc(50% - 5em);
+  opacity: 0;
+  transform: rotate(5deg);
   clip-path: polygon(9% 0%, 46% 10%, 85% 6%, 98% 20%, 82% 83%, 31% 67%, 4% 19%);
 }
 
-.pic2{
-  top: 20%;
-  right: 10%;
-  clip-path: polygon(2% 1%, 36% 6%, 82% 2%, 97% 19%, 75% 65%, 81% 75%, 64% 88%, 9% 68%, 0% 25%);
+.picinit2 {
+  top: calc(50vh - 5em);
+  right: calc(50% - 5em);
+  opacity: 0;
+  transform: rotate(-5deg);
+  clip-path: polygon(2% 1%,36% 6%,82% 2%,97% 19%,75% 65%,81% 75%,64% 88%,9% 68%,0% 25%);
 }
 
-.pic3{
-  bottom: 10%;
-  left: 40%;
-  clip-path: polygon(0% 15%, 28% 0%, 99% 15%, 96% 55%, 42% 82%, 26% 55%, 0% 46%);
+.picinit3 {
+  left: calc(50% - 5em);
+  bottom: calc(50vh - 5em);
+  opacity: 0;
+  clip-path: polygon(0% 15%,28% 0%,99% 15%,96% 55%,42% 82%,26% 55%,0% 46%);
 }
 
-.pic4{
-  top: 20%;
-  left: 20%;
+.picinit4 {
+  top: calc(50vh - 5em);
+  left: calc(50% - 5em);
+  opacity: 0;
   clip-path: polygon(9% 0%, 46% 10%, 85% 6%, 98% 20%, 82% 83%, 31% 67%, 4% 19%);
 }
 
-.pic5{
-  bottom: 10%;
-  right: 20%;
-  clip-path: polygon(2% 1%, 36% 6%, 82% 2%, 97% 19%, 75% 65%, 81% 75%, 64% 88%, 9% 68%, 0% 25%);
+.picinit5 {
+  right: calc(50% - 5em);
+  bottom: calc(50vh - 5em);
+  opacity: 0;
+  clip-path: polygon(2% 1%,36% 6%,82% 2%,97% 19%,75% 65%,81% 75%,64% 88%,9% 68%,0% 25%);
 }
 
-.pic6{
-  top: 10%;
-  left: 50%;
-  clip-path: polygon(0% 15%, 28% 0%, 99% 15%, 96% 55%, 42% 82%, 26% 55%, 0% 46%);
+.picinit6 {
+  top: calc(50vh - 5em);
+  left: calc(50% - 5em);
+  opacity: 0;
+  clip-path: polygon(0% 15%,28% 0%,99% 15%,96% 55%,42% 82%,26% 55%,0% 46%);
+}
+
+.pic1 {
+  @apply top-[60%] left-[10%] opacity-100 rotate-[-30deg] clip-polygon1;
+}
+
+.pic2 {
+  @apply top-[20%] right-[10%] opacity-100 rotate-[30deg] clip-polygon2;
+}
+
+.pic3 {
+  @apply bottom-[10%] left-[40%] opacity-100 rotate-[25deg] clip-polygon3;
+}
+
+.pic4 {
+  @apply top-[20%] left-[20%] opacity-100 clip-polygon4;
+}
+
+.pic5 {
+  @apply bottom-[10%] right-[20%] opacity-100 clip-polygon5;
+}
+
+.pic6 {
+  @apply top-[10%] left-[50%] opacity-100 clip-polygon6;
 }
 
 .wish {
@@ -197,20 +238,46 @@ body {
   }
 }
 
-@media only screen and (max-width: 480px){
-  .pic4{
+@media only screen and (max-width: 480px) {
+  .pic4 {
     top: 20%;
     left: 10%;
-    clip-path: polygon(9% 0%, 46% 10%, 85% 6%, 98% 20%, 82% 83%, 31% 67%, 4% 19%);
+    clip-path: polygon(
+      9% 0%,
+      46% 10%,
+      85% 6%,
+      98% 20%,
+      82% 83%,
+      31% 67%,
+      4% 19%
+    );
   }
-  .pic5{
+  .pic5 {
     bottom: 25%;
     right: 6%;
-    clip-path: polygon(2% 1%, 36% 6%, 82% 2%, 97% 19%, 75% 65%, 81% 75%, 64% 88%, 9% 68%, 0% 25%);
+    clip-path: polygon(
+      2% 1%,
+      36% 6%,
+      82% 2%,
+      97% 19%,
+      75% 65%,
+      81% 75%,
+      64% 88%,
+      9% 68%,
+      0% 25%
+    );
   }
-  .pic6{
+  .pic6 {
     top: 10%;
     left: 30%;
-    clip-path: polygon(0% 15%, 28% 0%, 99% 15%, 96% 55%, 42% 82%, 26% 55%, 0% 46%);
+    clip-path: polygon(
+      0% 15%,
+      28% 0%,
+      99% 15%,
+      96% 55%,
+      42% 82%,
+      26% 55%,
+      0% 46%
+    );
   }
 }

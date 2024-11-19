@@ -4,7 +4,7 @@ import HomeImage from "@/components/HomeImage";
 import HomeText from "@/components/HomeText";
 import Loader from "@/components/Loader";
 import Nav from "@/components/Nav";
-import Photo from "@/components/Photo";
+import Photo from "@/components/Photonew";
 import HomeBtn from "@/components/ui/HomeBtn";
 import Portal from "@/components/ui/Portal";
 import Scrollicon from "@/components/ui/Scrollicon";
