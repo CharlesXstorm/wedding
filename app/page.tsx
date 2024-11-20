@@ -9,6 +9,7 @@ import HomeBtn from "@/components/ui/HomeBtn";
 import Portal from "@/components/ui/Portal";
 import Scrollicon from "@/components/ui/Scrollicon";
 import Wish from "@/components/Wish";
+import { useStore } from "@/store";
 // import gsap from "gsap";
 import LocomotiveScroll, { ILocomotiveScrollOptions } from "locomotive-scroll";
 import Image from "next/image";
@@ -16,6 +17,7 @@ import { useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 
 export default function Home() {
+  const { setNavChange } = useStore();
   const mainRef = useRef(null);
 
   // const mainScroll =(e)=>{
@@ -23,6 +25,12 @@ export default function Home() {
   //     console.log(e)
 
   // }
+
+  const trackElement = () => {
+    const photoEl = document.querySelector("#photo");
+    const photoScroll = Math.ceil(photoEl?.getBoundingClientRect().top ?? 0);
+    photoScroll < -500 ? setNavChange(true) : setNavChange(false);
+  };
 
   useEffect(() => {
     // gsap.to(".title", {
@@ -46,6 +54,8 @@ export default function Home() {
 
     // window.addEventListener("scroll",mainScroll)
 
+    window.addEventListener("scroll", trackElement);
+
     if (mainRef.current) {
       const scroll = new LocomotiveScroll({
         el: document.querySelector(`[data-scroll-container]`),
@@ -54,7 +64,7 @@ export default function Home() {
       } as ILocomotiveScrollOptions);
     }
 
-    // return ()=> removeEventListener("scroll",mainScroll)
+    return () => removeEventListener("scroll", trackElement);
   }, []);
 
   return (

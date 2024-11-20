@@ -1,7 +1,9 @@
 "use client";
+import { useStore } from "@/store";
 import React, { useEffect } from "react";
 
 export const HomeSVG = () => {
+  const {navChange} = useStore()
   return (
     <svg
       viewBox="0 -6.5 36 36"
@@ -29,7 +31,7 @@ export const HomeSVG = () => {
           <g
             id="ui-gamblingWebsiteLined-icnos-casinoshunter"
             transform="translate(-342.000000, -159.000000)"
-            fill="#ffffff"
+            fill={`${navChange?"#000000":"#ffffff"}`}
             fillRule="nonzero"
           >
             {" "}

@@ -78,11 +78,11 @@ body {
 }
 
 .homeBtn {
-  @apply fixed bottom-[0] left-[0] z-[10] p-8 w-[8em] xl:w-[10em] rotate-[-30deg];
+  @apply fixed bottom-[0] left-[0] z-[10] p-8 w-[6em] xl:w-[8em] rotate-[-30deg];
 }
 
 .nav {
-  @apply fixed top-0 bg-[transparent] z-[10] text-white text-sm lg:text-lg w-full p-[2em] flex justify-center lg:justify-end gap-[2em];
+  @apply fixed top-0 z-[10] text-white text-sm lg:text-lg w-full p-[2em] transition-all duration-1000 flex justify-center lg:justify-end gap-[2em];
 }
 
 .navbtn {
@@ -107,6 +107,22 @@ body {
 
 .story {
   @apply bg-[orange] z-[5];
+}
+
+.wish {
+  @apply bg-white w-full h-[100vh];
+}
+
+.wish__contain{
+  @apply flex flex-col pt-[8em] justify-center items-center ;
+}
+
+.wish__title{
+  @apply font-[CremeEspana] text-[6em] text-black;
+}
+
+.wish__text{
+  @apply text-black w-[90%] lg:w-[50%];
 }
 
 .photo {
@@ -152,7 +168,7 @@ body {
 
 .picinit2 {
   top: calc(50vh - 5em);
-  right: calc(50% - 5em);
+  left: calc(50% - 5em);
   opacity: 0;
   transform: rotate(-5deg);
   clip-path: polygon(2% 1%,36% 6%,82% 2%,97% 19%,75% 65%,81% 75%,64% 88%,9% 68%,0% 25%);
@@ -160,7 +176,7 @@ body {
 
 .picinit3 {
   left: calc(50% - 5em);
-  bottom: calc(50vh - 5em);
+  top: calc(50vh - 5em);
   opacity: 0;
   clip-path: polygon(0% 15%,28% 0%,99% 15%,96% 55%,42% 82%,26% 55%,0% 46%);
 }
@@ -173,8 +189,8 @@ body {
 }
 
 .picinit5 {
-  right: calc(50% - 5em);
-  bottom: calc(50vh - 5em);
+  left: calc(50% - 5em);
+  top: calc(50vh - 5em);
   opacity: 0;
   clip-path: polygon(2% 1%,36% 6%,82% 2%,97% 19%,75% 65%,81% 75%,64% 88%,9% 68%,0% 25%);
 }
@@ -191,11 +207,11 @@ body {
 }
 
 .pic2 {
-  @apply top-[20%] right-[10%] opacity-100 rotate-[30deg] clip-polygon2;
+  @apply top-[20%] left-[50%] lg:left-[60%] opacity-100 rotate-[30deg] clip-polygon2;
 }
 
 .pic3 {
-  @apply bottom-[10%] left-[40%] opacity-100 rotate-[25deg] clip-polygon3;
+  @apply top-[70%] left-[40%] opacity-100 rotate-[25deg] clip-polygon3;
 }
 
 .pic4 {
@@ -203,15 +219,11 @@ body {
 }
 
 .pic5 {
-  @apply bottom-[10%] right-[20%] opacity-100 clip-polygon5;
+  @apply top-[60%] left-[70%] opacity-100 clip-polygon5;
 }
 
 .pic6 {
   @apply top-[10%] left-[50%] opacity-100 clip-polygon6;
-}
-
-.wish {
-  @apply bg-[blue];
 }
 
 .scrollicon {

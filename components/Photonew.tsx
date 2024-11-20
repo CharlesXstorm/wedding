@@ -57,7 +57,6 @@ const clickHandler = (
 ) => {
   switch (btnType) {
     case "next":
-        
       setNavClick(true);
 
       const newTimeoutID = setTimeout(() => {
@@ -183,16 +182,22 @@ const PhotoItem: React.FC<photoitemProps> = ({
     if (position === classNameInit) {
       setPosition(className);
     }
-
   }, [page]);
 
   return (
     <div
       onClick={picsClick}
-      className={`photo__pics ${position}`}
+      className={[
+        `photo__pics w-[10em] h-[10em] `,
+        `${!isClicked && position}`,
+        `${isClicked && " w-[30em] h-[30em] z-[25]"}`,
+      ]
+        .filter(Boolean)
+        .join(" ")}
       style={{
         top: isClicked ? `calc(50vh - 15em)` : "",
         left: isClicked ? `calc(50% - 15em)` : "",
+        clipPath: isClicked ? "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" : ""
       }}
     >
       <Image
