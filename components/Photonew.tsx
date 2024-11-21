@@ -188,25 +188,37 @@ const PhotoItem: React.FC<photoitemProps> = ({
     <div
       onClick={picsClick}
       className={[
-        `photo__pics w-[10em] h-[10em] `,
+        `photo__pics w-[10em] h-[10em] justify-center `,
         `${!isClicked && position}`,
-        `${isClicked && " w-[30em] h-[30em] z-[25]"}`,
+        `${isClicked && " w-[100%] h-[100vh] z-[25] bg-black justify-center items-center"}`,
+        // `${isClicked && " w-[30em] h-[30em] z-[25]"}`,
       ]
         .filter(Boolean)
         .join(" ")}
       style={{
-        top: isClicked ? `calc(50vh - 15em)` : "",
-        left: isClicked ? `calc(50% - 15em)` : "",
-        clipPath: isClicked ? "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" : ""
+        top: isClicked ? "0px" : "",
+        left: isClicked ? "0px" : "",
+        paddingTop: isClicked ? "2em" : "",
+        // paddingBottom: isClicked ? "2em" : "",
       }}
     >
-      <Image
-        className="photo__image object-contain"
-        src={src}
-        width={120}
-        height={120}
-        alt={alt}
-      />
+      <div
+        className="flex"
+        style={
+          {
+            height: isClicked ? "70%" : "100%",
+            // paddingBottom: isClicked ? "2em" : "",
+          }
+        }
+      >
+        <Image
+          className="photo__image object-contain"
+          src={src}
+          width={120}
+          height={120}
+          alt={alt}
+        />
+      </div>
     </div>
   );
 };

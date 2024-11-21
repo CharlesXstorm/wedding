@@ -145,12 +145,16 @@ body {
   @apply absolute flex  pointer-events-auto filter lg:hover:grayscale transition-all transition-[filter] duration-[5] overflow-hidden;
 } */
 
+/* .photoClip{
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+} */
+
 .photo__pics{
   position: absolute;
   display: flex;
   pointer-events: auto;
   overflow: hidden;
-  transition: all 0.5s ease-in-out, opacity 0.4s linear;
+  transition: opacity 0.4s linear, clip-path 5s linear, all 0.2s ease-in-out;
 }
 
 .photo__image {
@@ -207,11 +211,11 @@ body {
 }
 
 .pic2 {
-  @apply top-[20%] left-[50%] lg:left-[60%] opacity-100 rotate-[30deg] clip-polygon2;
+  @apply top-[20%] left-[50%] md:left-[60%] opacity-100 rotate-[30deg] clip-polygon2;
 }
 
 .pic3 {
-  @apply top-[70%] left-[40%] opacity-100 rotate-[25deg] clip-polygon3;
+  @apply top-[70%] left-[30%] md:left-[40%] opacity-100 rotate-[25deg] clip-polygon3;
 }
 
 .pic4 {
@@ -219,11 +223,11 @@ body {
 }
 
 .pic5 {
-  @apply top-[60%] left-[70%] opacity-100 clip-polygon5;
+  @apply top-[60%] left-[50%] md:left-[70%] opacity-100 clip-polygon5;
 }
 
 .pic6 {
-  @apply top-[10%] left-[50%] opacity-100 clip-polygon6;
+  @apply top-[10%] left-[50%] md:left-[40%] opacity-100 clip-polygon6;
 }
 
 .scrollicon {
