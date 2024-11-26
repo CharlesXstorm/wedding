@@ -18,7 +18,7 @@ import { useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 
 export default function Home() {
-  const { setNavChange } = useStore();
+  const { setNavChange, setNavScrollChange } = useStore();
   const mainRef = useRef(null);
 
   // const mainScroll =(e)=>{
@@ -29,7 +29,11 @@ export default function Home() {
 
   const trackElement = () => {
     const photoEl = document.querySelector("#photo");
+    const homeEl = document.querySelector("#home_");
+    const homeScroll = Math.ceil(homeEl?.getBoundingClientRect().top ?? 0);
     const photoScroll = Math.ceil(photoEl?.getBoundingClientRect().top ?? 0);
+    // console.log("homeScroll", homeScroll)
+    homeScroll < -50 ? setNavScrollChange(true) : setNavScrollChange(false);
     photoScroll < -500 ? setNavChange(true) : setNavChange(false);
   };
 

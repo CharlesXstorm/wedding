@@ -1,8 +1,11 @@
+import { useStore } from "@/store";
 import React from "react";
 
 const Scrollicon = () => {
+  const {navScrollChange} = useStore()
+  console.log("navScroll", navScrollChange)
   return (
-    <div className="scrollicon">
+    <div className={["scrollicon transition-all duration-1000",`${navScrollChange? "opacity-0": "opacity-100"}`].filter(Boolean).join(" ")}>
       <svg
         width="4em"
         viewBox="0 0 24 24"

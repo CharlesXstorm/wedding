@@ -50,7 +50,7 @@ const Story = () => {
           speed={800}
           slideToClickedSlide={true}
           navigation
-          pagination={{ clickable: true }}
+          // pagination={{ clickable: true }}
           className="h-full w-full"
         >
           {story.map((item, index) => (
