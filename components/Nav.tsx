@@ -18,14 +18,19 @@ const NavItem: React.FC<naveItemProps> = ({ title, id }) => {
     });
   };
 
-  return <button onClick={scrollToView}>{title}</button>;
+  return (
+    <div className="navmenubtn relative h-[2em] pointer-events-auto overflow-hidden">
+      <button onClick={scrollToView}>{title}</button>
+    <div></div>
+    </div>
+  );
 };
 
 const Nav = () => {
   const { navChange } = useStore();
   return (
     <nav
-      className={["nav", `${navChange ? "bg-black" : "bg-transparent"}`]
+      className={["nav pointer-events-none", `${navChange ? "bg-black" : "bg-transparent"}`]
         .filter(Boolean)
         .join(" ")}
     >

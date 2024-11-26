@@ -5,6 +5,7 @@ import HomeText from "@/components/HomeText";
 import Loader from "@/components/Loader";
 import Nav from "@/components/Nav";
 import Photo from "@/components/Photonew";
+import Story from "@/components/Story";
 import HomeBtn from "@/components/ui/HomeBtn";
 import Portal from "@/components/ui/Portal";
 import Scrollicon from "@/components/ui/Scrollicon";
@@ -79,7 +80,7 @@ export default function Home() {
       </div>
 
       <div id="story" className="story pages" data-scroll-section>
-        <p>Story</p>
+        <Story />
       </div>
 
       <div id="photo" className="photo pages">

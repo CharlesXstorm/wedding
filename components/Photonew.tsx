@@ -188,9 +188,11 @@ const PhotoItem: React.FC<photoitemProps> = ({
     <div
       onClick={picsClick}
       className={[
-        `photo__pics w-[10em] h-[10em] justify-center `,
-        `${!isClicked && position}`,
-        `${isClicked && " w-[100%] h-[100vh] z-[25] bg-black justify-center items-center"}`,
+        `photo__pics justify-center`,
+        `${!isClicked && `${position} w-[10em] h-[10em]`}`,
+        `${
+          isClicked && " w-[100%] h-[100vh] z-[25] justify-center items-center"
+        }`,
         // `${isClicked && " w-[30em] h-[30em] z-[25]"}`,
       ]
         .filter(Boolean)
@@ -204,15 +206,14 @@ const PhotoItem: React.FC<photoitemProps> = ({
     >
       <div
         className="flex"
-        style={
-          {
-            height: isClicked ? "70%" : "100%",
-            // paddingBottom: isClicked ? "2em" : "",
-          }
-        }
+        style={{
+          height: isClicked ? "70%" : "100%",
+          // paddingBottom: isClicked ? "2em" : "",
+        }}
       >
+        <div className="absolute top-0 left-0 w-[100%] h-[100%] bg-black opacity-80 "></div>
         <Image
-          className="photo__image object-contain"
+          className="photo__image object-contain z-[2]"
           src={src}
           width={120}
           height={120}

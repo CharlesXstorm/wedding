@@ -93,6 +93,21 @@ body {
   @apply flex self-end md:self-center w-[4em] lg:w-[5em] mb-[5em];
 }
 
+.navmenubtn > div {
+  position: absolute;
+  left: -100%;
+  bottom: 0px;
+  height: 0.2em;
+  width: 80%;
+  background: orange;
+  transition: all 0.2s ease-in-out;
+  /* absolute left-0 bottom-0 h-[0.2em] bg-[orange] w-[80%]  */
+}
+
+.navmenubtn:hover > div{
+  left: 0%;
+}
+
 .pages {
   @apply h-[100vh] w-full sticky bottom-0 overflow-hidden;
 }
@@ -113,15 +128,15 @@ body {
   @apply bg-white w-full h-[100vh];
 }
 
-.wish__contain{
-  @apply flex flex-col pt-[8em] justify-center items-center ;
+.wish__contain {
+  @apply flex flex-col pt-[8em] justify-center items-center;
 }
 
-.wish__title{
+.wish__title {
   @apply font-[CremeEspana] text-[6em] text-black;
 }
 
-.wish__text{
+.wish__text {
   @apply text-black w-[90%] lg:w-[50%];
 }
 
@@ -134,7 +149,7 @@ body {
 }
 
 .photo__title {
-  @apply relative z-[15] text-white font-['CremeEspana'] text-[4em];
+  @apply relative z-[15] text-[orange] font-['CremeEspana'] text-[4em];
 }
 
 .photo__page1 {
@@ -149,7 +164,7 @@ body {
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 } */
 
-.photo__pics{
+.photo__pics {
   position: absolute;
   display: flex;
   pointer-events: auto;
@@ -175,14 +190,32 @@ body {
   left: calc(50% - 5em);
   opacity: 0;
   transform: rotate(-5deg);
-  clip-path: polygon(2% 1%,36% 6%,82% 2%,97% 19%,75% 65%,81% 75%,64% 88%,9% 68%,0% 25%);
+  clip-path: polygon(
+    2% 1%,
+    36% 6%,
+    82% 2%,
+    97% 19%,
+    75% 65%,
+    81% 75%,
+    64% 88%,
+    9% 68%,
+    0% 25%
+  );
 }
 
 .picinit3 {
   left: calc(50% - 5em);
   top: calc(50vh - 5em);
   opacity: 0;
-  clip-path: polygon(0% 15%,28% 0%,99% 15%,96% 55%,42% 82%,26% 55%,0% 46%);
+  clip-path: polygon(
+    0% 15%,
+    28% 0%,
+    99% 15%,
+    96% 55%,
+    42% 82%,
+    26% 55%,
+    0% 46%
+  );
 }
 
 .picinit4 {
@@ -196,14 +229,32 @@ body {
   left: calc(50% - 5em);
   top: calc(50vh - 5em);
   opacity: 0;
-  clip-path: polygon(2% 1%,36% 6%,82% 2%,97% 19%,75% 65%,81% 75%,64% 88%,9% 68%,0% 25%);
+  clip-path: polygon(
+    2% 1%,
+    36% 6%,
+    82% 2%,
+    97% 19%,
+    75% 65%,
+    81% 75%,
+    64% 88%,
+    9% 68%,
+    0% 25%
+  );
 }
 
 .picinit6 {
   top: calc(50vh - 5em);
   left: calc(50% - 5em);
   opacity: 0;
-  clip-path: polygon(0% 15%,28% 0%,99% 15%,96% 55%,42% 82%,26% 55%,0% 46%);
+  clip-path: polygon(
+    0% 15%,
+    28% 0%,
+    99% 15%,
+    96% 55%,
+    42% 82%,
+    26% 55%,
+    0% 46%
+  );
 }
 
 .pic1 {
@@ -230,6 +281,22 @@ body {
   @apply top-[10%] left-[50%] md:left-[40%] opacity-100 clip-polygon6;
 }
 
+.page__end{
+  @apply absolute bottom-0 w-[60%] h-[5px] bg-[orange];
+}
+
+.story__container{
+  @apply relative flex flex-col text-white items-center w-full h-full bg-black pt-[4em] md:pt-[8em] lg:pt-[4em];
+}
+
+.story__content{
+  @apply w-full  ;
+}
+
+.story__title{
+  @apply text-[6em] text-[orange] md:text-[8em] lg:text-[5em] font-[CremeEspana];
+}
+
 .scrollicon {
   @apply fixed bottom-0 flex w-full justify-center p-[2em];
 }
@@ -237,6 +304,32 @@ body {
 .cursor {
   transform: translateY(0px);
   animation: cursorMove 0.6s ease-out infinite;
+}
+
+/* .swiper-pagination{
+  background-color: red;
+} */
+
+.swiper-button-next, .swiper-button-prev { 
+  color: orange !important; /* Change the color of the buttons */ 
+  background-color: rgba(0, 0, 0, 0.5); /* Add a background color */ 
+  /* background-image: url("/icons/scroll-down.svg"); */
+  border-radius: 100%; /* Make the buttons circular */ 
+  width: 1em; 
+  height: 1em; 
+  padding: 2em;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-weight: bold;
+} 
+
+.swiper-button-next:hover, .swiper-button-prev:hover { 
+  background-color: rgba(0, 0, 0, 0.8); /* Darken the background on hover */ 
+} 
+
+.swiper-button-next::after, .swiper-button-prev::after { 
+  font-size: 20px; /* Increase the size of the arrow icons */ 
 }
 
 @keyframes cursorMove {
@@ -251,6 +344,19 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@media only screen and (max-width: 380px){
+  .story__title{
+    font-size: 2.5em;
+  }
+  .storyitem__title{
+    font-size: 1.2em;
+  }
+  .storyitem__pic{
+    width: 100%;
+    height: 18em;
   }
 }
 
