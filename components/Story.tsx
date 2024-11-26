@@ -45,8 +45,6 @@ const Story = () => {
         <Swiper
           modules={[Navigation, Pagination, Scrollbar]}
           grabCursor={true}
-          //         // initialSlide={1}
-          // centeredSlides={true}
           spaceBetween={50}
           slidesPerView={1}
           speed={800}
