@@ -38,7 +38,7 @@ body {
 }
 
 .loader {
-  @apply fixed top-0 z-[12] bg-black w-full h-[100vh] pointer-events-none transition-all;
+  @apply fixed top-0 z-[12] bg-black w-full h-[100vh] pointer-events-none transition-all duration-1000;
 }
 
 .home__image {
@@ -270,7 +270,7 @@ body {
 }
 
 .page__end{
-  @apply absolute bottom-0 w-[60%] h-[5px] bg-[orange];
+  @apply absolute bottom-0 w-[60%] h-[2px] bg-[orange];
 }
 
 .story__container{
@@ -299,7 +299,7 @@ body {
 } */
 
 .swiper-button-next, .swiper-button-prev { 
-  color: orange !important; /* Change the color of the buttons */ 
+  color: white !important; /* Change the color of the buttons */ 
   background-color: rgba(0, 0, 0, 0.5); /* Add a background color */ 
   /* background-image: url("/icons/scroll-down.svg"); */
   border-radius: 100%; /* Make the buttons circular */ 
@@ -318,6 +318,38 @@ body {
 
 .swiper-button-next::after, .swiper-button-prev::after { 
   font-size: 20px; /* Increase the size of the arrow icons */ 
+}
+
+.left__span, .right__span{
+width: 10em;
+padding: 0.2em;
+background-color: white;
+}
+
+.left__span{
+  animation: leftspanAnimate 0.8s ease-in-out alternate-reverse infinite ;
+}
+
+.right__span{
+  animation: rightspanAnimate 0.8s ease-in-out alternate-reverse infinite ;
+}
+
+@keyframes leftspanAnimate{
+  0%{
+    transform: translateX(-100px);
+  }
+  100%{
+    transform: translateX(0px);
+  }
+}
+
+@keyframes rightspanAnimate{
+  0%{
+    transform: translateX(100px);
+  }
+  100%{
+    transform: translateX(0px);
+  }
 }
 
 @keyframes cursorMove {
