@@ -33,10 +33,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* .home{
-  @apply h-[100vh] w-full overflow-hidden;
-} */
-
 .datebtn {
   @apply rounded-full px-4 py-2 border-[2px] pointer-events-auto;
 }
@@ -155,14 +151,6 @@ body {
 .photo__page1 {
   @apply absolute top-0 left-0 w-full h-full;
 }
-
-/* .photo__pics {
-  @apply absolute flex  pointer-events-auto filter lg:hover:grayscale transition-all transition-[filter] duration-[5] overflow-hidden;
-} */
-
-/* .photoClip{
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-} */
 
 .photo__pics {
   position: absolute;
