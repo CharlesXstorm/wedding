@@ -11,27 +11,29 @@ import { photoPage1, photoPage2 } from "@/constant";
 import Image from "next/image";
 import { LeftSVG } from "@/svg";
 import { AnimatePresence, motion } from "framer-motion";
+import { useStore } from "@/store";
 
-const albumVariant = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1, type: "easeInOut" },
-  },
-};
+// const albumVariant = {
+//   hidden: { opacity: 0 },
+//   visible: {
+//     opacity: 1,
+//     transition: { staggerChildren: 0.1, type: "easeInOut" },
+//   },
+// };
 
-const albumChildVariant = {
-  hidden: { opacity: 0, x: 50, y: -50 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    y: 0,
-    transition: { duration: 0.5, type: "easeInOut" },
-  },
-};
+// const albumChildVariant = {
+//   hidden: { opacity: 0, x: 50, y: -50 },
+//   visible: {
+//     opacity: 1,
+//     x: 0,
+//     y: 0,
+//     transition: { duration: 0.5, type: "easeInOut" },
+//   },
+// };
 
 interface photoitemProps {
   className: string;
+  classNameInit: string;
   page?: number;
   src: string;
   alt: string;
@@ -40,37 +42,85 @@ interface photoitemProps {
 interface btnProps {
   page?: number;
   setPage: Dispatch<SetStateAction<number>>;
+  timeoutID: (() => void) | undefined;
+  setTimeoutID: Dispatch<SetStateAction<(() => void) | undefined>>;
 }
 
-const clickHandler = (btnType: string, setPage: any) => {
+/////////////clickFunction/////////////////
+const clickHandler = (
+  btnType: string,
+  setPage: any,
+  navClick: Boolean,
+  setNavClick: any,
+  timeoutID: any,
+  setTimeoutID: any
+) => {
   switch (btnType) {
     case "next":
-      setPage((prevPage: number) => {
-        if (prevPage + 1 < 3) {
-          return prevPage + 1;
-        } else {
-          return 1;
-        }
-      });
-      return;
+      setNavClick(true);
+
+      const newTimeoutID = setTimeout(() => {
+        setNavClick(false);
+        setPage((prevPage: number) => {
+          if (prevPage + 1 < 3) {
+            return prevPage + 1;
+          } else {
+            return 1;
+          }
+        });
+      }, 500);
+
+      setTimeoutID(newTimeoutID);
+
+      return () => clearTimeout(newTimeoutID);
     case "prev":
-      setPage((prevPage: number) => {
-        if (prevPage - 1 > 0) {
-          return prevPage - 1;
-        } else {
-          return 2;
-        }
-      });
-      return;
+      if (timeoutID) {
+        clearTimeout(timeoutID);
+        setTimeoutID(null);
+      }
+
+      setNavClick(true);
+
+      const newTimeoutID2 = setTimeout(() => {
+        setNavClick(false);
+        setPage((prevPage: number) => {
+          if (prevPage - 1 > 0) {
+            return prevPage - 1;
+          } else {
+            return 2;
+          }
+        });
+      }, 500);
+
+      setTimeoutID(newTimeoutID2);
+
+      return () => clearTimeout(newTimeoutID2);
+
     default:
       return;
   }
 };
 
-const Next: React.FC<btnProps> = ({ page, setPage }) => {
+///////////////////////button///////////////
+const Next: React.FC<btnProps> = ({
+  page,
+  setPage,
+  timeoutID,
+  setTimeoutID,
+}) => {
+  const { navClick, setNavClick } = useStore();
   return (
     <button
-      onClick={() => clickHandler("next", setPage)}
+      onClick={() =>
+        clickHandler(
+          "next",
+          setPage,
+          navClick,
+          setNavClick,
+          timeoutID,
+          setTimeoutID
+        )
+      }
       className="scale-x-[-1] pointer-events-auto"
     >
       <LeftSVG />
@@ -78,10 +128,25 @@ const Next: React.FC<btnProps> = ({ page, setPage }) => {
   );
 };
 
-const Prev: React.FC<btnProps> = ({ page, setPage }) => {
+const Prev: React.FC<btnProps> = ({
+  page,
+  setPage,
+  timeoutID,
+  setTimeoutID,
+}) => {
+  const { navClick, setNavClick } = useStore();
   return (
     <button
-      onClick={() => clickHandler("prev", setPage)}
+      onClick={() =>
+        clickHandler(
+          "prev",
+          setPage,
+          navClick,
+          setNavClick,
+          timeoutID,
+          setTimeoutID
+        )
+      }
       className={"pointer-events-auto"}
     >
       <LeftSVG />
@@ -89,103 +154,132 @@ const Prev: React.FC<btnProps> = ({ page, setPage }) => {
   );
 };
 
-const PhotoItem: React.FC<photoitemProps> = ({ className, page, src, alt }) => {
-  // const [imageWidth, setImageWidth] = useState<number>(0);
-  // const [imageHeight, setImageHeight] = useState<number>(0);
+///////////////////picItem///////////////////////
+const PhotoItem: React.FC<photoitemProps> = ({
+  className,
+  classNameInit,
+  page,
+  src,
+  alt,
+}) => {
+  const { navClick } = useStore();
   const [isClicked, setIsClicked] = useState(false);
-
-  // const imageRef = useRef<HTMLDivElement>(null);
+  const [position, setPosition] = useState(classNameInit);
 
   const picsClick = () => {
-    setIsClicked((prev)=>{
-      return !prev
-    })
+    setIsClicked((prev) => {
+      return !prev;
+    });
   };
 
-  // useEffect(() => {
-  //   if (imageRef.current) {
-  //     setImageWidth(imageRef.current.clientWidth);
-  //     setImageHeight(imageRef.current.clientHeight);
-  //   }
-  // }, [page]);
+  useEffect(() => {
+    if (navClick) {
+      setPosition(classNameInit);
+    }
+  }, [navClick]);
+
+  useEffect(() => {
+    if (position === classNameInit) {
+      setPosition(className);
+    }
+  }, [page]);
+
   return (
-    <motion.div
+    <div
       onClick={picsClick}
-      // ref={imageRef}
-      variants={albumChildVariant}
-      className={["photo__pics", `${!isClicked && `${className} w-[10em] h-[10em]`}`, `${isClicked && "w-[30em] h-[30em] z-[25]"}`]
+      className={[
+        `photo__pics justify-center`,
+        `${!isClicked && `${position} w-[10em] h-[10em]`}`,
+        `${
+          isClicked && " w-[100%] h-[100vh] z-[25] justify-center items-center"
+        }`,
+        // `${isClicked && " w-[30em] h-[30em] z-[25]"}`,
+      ]
         .filter(Boolean)
         .join(" ")}
       style={{
-        top: isClicked ? `calc(50vh - 15em)` : "",
-        left: isClicked ? `calc(50% - 15em)` : "",
-        // top: isClicked ? `calc(50vh - ${imageHeight / 2}px)` : "",
-        // left: isClicked ? `calc(50% - ${imageWidth / 2}px)` : "",
+        top: isClicked ? "0px" : "",
+        left: isClicked ? "0px" : "",
+        paddingTop: isClicked ? "2em" : "",
+        // paddingBottom: isClicked ? "2em" : "",
       }}
     >
-      <Image
-        className="photo__image object-contain"
-        src={src}
-        width={120}
-        height={120}
-        alt={alt}
-      />
-    </motion.div>
+      <div
+        className="flex"
+        style={{
+          height: isClicked ? "70%" : "100%",
+          // paddingBottom: isClicked ? "2em" : "",
+        }}
+      >
+        <div className="absolute top-0 left-0 w-[100%] h-[100%] bg-black opacity-80 "></div>
+        <Image
+          className="photo__image object-contain z-[2]"
+          src={src}
+          width={120}
+          height={120}
+          alt={alt}
+        />
+      </div>
+    </div>
   );
 };
 
+//////////////////////photoPage//////////////////////
 const Photo = () => {
   const [page, setPage] = useState(1);
+  const [timeoutID, setTimeoutID] = useState<() => void>();
+
+  //   useEffect(()=>{
+  //     if(timeoutID){
+  //         clearTimeout(timeoutID)
+  //     }
+  //   },[])
   return (
     <div className="photo__cont pointer-events-none">
       <p className="photo__title">Photo Album</p>
 
       <div className="photo__page1">
-        <AnimatePresence mode="wait">
-          {page === 1 && (
-            <motion.div
-              variants={albumVariant}
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              key="1"
-            >
-              {photoPage1.map((item, index) => (
-                <PhotoItem
-                  key={index}
-                  className={item.className}
-                  page={page}
-                  src={item.src}
-                  alt={item.alt}
-                />
-              ))}
-            </motion.div>
-          )}
+        {page === 1 && (
+          <div key="1">
+            {photoPage1.map((item, index) => (
+              <PhotoItem
+                key={index}
+                className={item.className}
+                classNameInit={item.classNameInit}
+                page={page}
+                src={item.src}
+                alt={item.alt}
+              />
+            ))}
+          </div>
+        )}
 
-          {page === 2 && (
-            <motion.div
-              variants={albumVariant}
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              key="2"
-            >
-              {photoPage2.map((item, index) => (
-                <PhotoItem
-                  key={index}
-                  className={item.className}
-                  src={item.src}
-                  alt={item.alt}
-                />
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {page === 2 && (
+          <div key="2">
+            {photoPage2.map((item, index) => (
+              <PhotoItem
+                key={index}
+                className={item.className}
+                classNameInit={item.classNameInit}
+                src={item.src}
+                alt={item.alt}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="navbtn">
-        <Prev setPage={setPage} />
-        <Next setPage={setPage} />
+        <Prev
+          setPage={setPage}
+          timeoutID={timeoutID}
+          setTimeoutID={setTimeoutID}
+        />
+        <Next
+          setPage={setPage}
+          timeoutID={timeoutID}
+          setTimeoutID={setTimeoutID}
+        />
       </div>
     </div>
   );
