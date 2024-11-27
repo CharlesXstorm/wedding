@@ -74,7 +74,7 @@ body {
 }
 
 .homeBtn {
-  @apply fixed bottom-[0] left-[0] z-[10] p-8 w-[6em] xl:w-[8em] rotate-[-30deg];
+  @apply fixed bottom-[0] left-[0] z-[10] p-8 w-[8em] xl:w-[10em] rotate-[-30deg];
 }
 
 .nav {
@@ -105,7 +105,7 @@ body {
 }
 
 .pages {
-  @apply h-[100vh] w-full sticky bottom-0 overflow-hidden;
+  @apply h-[100vh] w-full overflow-hidden;
 }
 
 .pages > p {
