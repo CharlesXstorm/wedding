@@ -31,12 +31,17 @@ import { useStore } from "@/store";
 //   },
 // };
 
+interface photoProp {
+  isActive: boolean;
+}
+
 interface photoitemProps {
   className: string;
   classNameInit: string;
   page?: number;
   src: string;
   alt: string;
+  isActive:boolean;
 }
 
 interface btnProps {
@@ -161,6 +166,7 @@ const PhotoItem: React.FC<photoitemProps> = ({
   page,
   src,
   alt,
+  isActive
 }) => {
   const { navClick } = useStore();
   const [isClicked, setIsClicked] = useState(false);
@@ -185,7 +191,12 @@ const PhotoItem: React.FC<photoitemProps> = ({
   }, [page]);
 
   return (
-    <div
+    <motion.div
+    // animate={{
+    //   opacity: isActive? 1: 0,
+    //   scale: isActive? 1: 0
+    // }}
+    // transition={{opacity:{duration:0.5, ease:"easeInOut"}}}
       onClick={picsClick}
       className={[
         `photo__pics justify-center`,
@@ -220,12 +231,12 @@ const PhotoItem: React.FC<photoitemProps> = ({
           alt={alt}
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 
 //////////////////////photoPage//////////////////////
-const Photo = () => {
+const Photo: React.FC<photoProp> = ({isActive}) => {
   const [page, setPage] = useState(1);
   const [timeoutID, setTimeoutID] = useState<() => void>();
 
@@ -236,7 +247,13 @@ const Photo = () => {
   //   },[])
   return (
     <div className="photo__cont pointer-events-none">
-      <p className="photo__title">Photo Album</p>
+      <motion.p 
+      animate={{
+        opacity: isActive? 1: 0,
+        y: isActive? 0: 40
+      }}
+      transition={{duration:0.5, delay:0.4, ease:"easeInOut"}}
+      className="photo__title">Photo Album</motion.p>
 
       <div className="photo__page1">
         {page === 1 && (
@@ -249,6 +266,7 @@ const Photo = () => {
                 page={page}
                 src={item.src}
                 alt={item.alt}
+                isActive={isActive}
               />
             ))}
           </div>
@@ -263,6 +281,7 @@ const Photo = () => {
                 classNameInit={item.classNameInit}
                 src={item.src}
                 alt={item.alt}
+                isActive={isActive}
               />
             ))}
           </div>

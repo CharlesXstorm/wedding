@@ -1,20 +1,25 @@
 "use client";
+import { useStore } from "@/store";
 import { HomeSVG } from "@/svg";
 import React from "react";
+import { SwiperClass } from "swiper/react";
 
-const HomeBtn = () => {
-    const scrollToView = () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        })
-      
-      };
+interface homeProp {
+  swiper: SwiperClass | null | undefined;
+}
+
+const HomeBtn: React.FC<homeProp> = ({ swiper }) => {
+  const { navChange } = useStore();
+  const scrollToView = () => {
+    swiper?.slideTo(0);
+  };
   return (
-    <div >
-      <button onClick={scrollToView} className="homeBtn">
-        <HomeSVG />
-      </button>
+    <div>
+      {navChange && (
+        <button onClick={scrollToView} className="homeBtn">
+          <HomeSVG />
+        </button>
+      )}
     </div>
   );
 };
