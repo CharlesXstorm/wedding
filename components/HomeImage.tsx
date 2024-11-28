@@ -8,18 +8,18 @@ const HomeImage = () => {
   const { imageLoaded, setImageLoaded } = useStore();
   const isMobile = useIsMobile()
 
-  const srcList = ["/images/heroDsk3.jpg","/images/heroMobile.jpg"]
+  const srcList = ["/images/clemsPerky.jpg","/images/clemsPerky.jpg"]
 
   return (
     <div className="home__image">
       <Image
         onLoad={() => setImageLoaded(true)}
         className={[
-          "origin-[50%_0] translate-y-[0]",
+          "origin-[50%_0] translate-y-[0] lg:translate-y-[-150px]",
           `${
             imageLoaded
-              ? "scale-[1.2] lg:scale-[1]"
-              : "scale-[1.5] lg:scale-[1.5]"
+              ? "scale-[2] lg:scale-[1]"
+              : "scale-[2.5] lg:scale-[1.5]"
           }`,
         ]
           .filter(Boolean)

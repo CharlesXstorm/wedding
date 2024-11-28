@@ -46,7 +46,7 @@ body {
 }
 
 .home__text {
-  @apply absolute bottom-[5em] lg:bottom-[0] flex flex-col justify-center w-full text-white pointer-events-none;
+  @apply absolute bottom-[5em] lg:bottom-[0] flex flex-col justify-center items-center w-full text-white pointer-events-none;
 }
 
 .title {
@@ -54,7 +54,7 @@ body {
 }
 
 .home__text__title {
-  @apply flex flex-col lg:flex-row leading-[1.2em] lg:gap-2 font-['CremeEspana'] items-center text-[4em] md:text-[6em] xl:text-[8em];
+  @apply flex flex-col lg:flex-row leading-[1.2em] w-[50%] lg:gap-2 font-['CremeEspana'] py-8 bg-[rgba(0,0,0,0.5)] rounded-[10px] items-center text-[white] text-[4em] md:text-[6em] xl:text-[8em];
 }
 
 .home__text p {
@@ -78,7 +78,7 @@ body {
 }
 
 .nav {
-  @apply fixed top-0 z-[10] text-white text-sm lg:text-lg w-full p-[2em] transition-all duration-1000 flex justify-center lg:justify-end gap-[2em];
+  @apply fixed top-0 z-[10] bg-[rgba(0,0,0,0.5)] lg:bg-transparent text-white text-sm lg:text-lg w-full lg:w-[50%] p-[2em] transition-all duration-1000 flex justify-center lg:justify-end gap-[2em];
 }
 
 .navbtn {
