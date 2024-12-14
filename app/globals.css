@@ -46,7 +46,7 @@ body {
 }
 
 .home__text {
-  @apply absolute bottom-[5em] lg:bottom-[0] flex flex-col justify-center items-center w-full text-white pointer-events-none;
+  @apply absolute lg:h-[100vh] bottom-[5em] lg:bottom-[0] flex flex-col justify-center items-center w-full text-white pointer-events-none;
 }
 
 .title {
@@ -54,7 +54,7 @@ body {
 }
 
 .home__text__title {
-  @apply flex flex-col lg:flex-row leading-[1.2em] w-[50%] lg:gap-2 font-['CremeEspana'] py-8 bg-[rgba(0,0,0,0.5)] rounded-[10px] items-center text-[white] text-[4em] md:text-[6em] xl:text-[8em];
+  @apply flex lg:pt-[1.5em] lg:flex-row leading-[1.2em] w-[50%] lg:gap-2 font-['CremeEspana'] rounded-[10px] items-center text-[white] text-[4em] md:text-[6em] xl:text-[8em];
 }
 
 .home__text p {
@@ -70,7 +70,7 @@ body {
 }
 
 .home__text__p2 {
-  @apply opacity-[0.2] text-[orange] font-[600] text-[6em] md:text-[12em] xl:text-[14em];
+  @apply opacity-[0.2] text-[orange] font-[600] text-[4em] md:text-[6em] lg:text-[12em] xl:text-[14em];
 }
 
 .homeBtn {
@@ -78,7 +78,7 @@ body {
 }
 
 .nav {
-  @apply fixed top-0 z-[10] bg-[rgba(0,0,0,0.5)] lg:bg-transparent text-white text-sm lg:text-lg w-full lg:w-[50%] p-[2em] transition-all duration-1000 flex justify-center lg:justify-end gap-[2em];
+  @apply fixed top-0 z-[10] text-white text-sm lg:text-lg w-full p-[2em] transition-all duration-1000 flex justify-center lg:justify-end gap-[2em];
 }
 
 .navbtn {
@@ -282,11 +282,11 @@ body {
 }
 
 .story__title{
-  @apply text-[6em] text-[orange] md:text-[8em] lg:text-[5em] font-[CremeEspana];
+  @apply text-[6em] text-[orange] md:text-[8em] lg:text-[3em] font-[CremeEspana];
 }
 
 .scrollicon {
-  @apply fixed bottom-0 flex w-full justify-center p-[2em];
+  @apply fixed bottom-0 flex w-full justify-center p-[2em] pointer-events-none;
 }
 
 .cursor {
