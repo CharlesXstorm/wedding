@@ -69,7 +69,7 @@ export default function Home() {
 
   return (
     <main id="_main" ref={mainRef} data-scroll-container>
-      {/* {<Loader />} */}
+      {<Loader />}
       <Nav swiper={swiperRef.current} />
       <HomeBtn swiper={swiperRef.current} />
       <Swiper

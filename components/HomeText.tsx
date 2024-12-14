@@ -74,7 +74,34 @@ const HomeText = () => {
         )}
 
         {showText && (
-          <motion.div key="2" className="home__text__para">
+          <motion.div key="2" className="lg:absolute w-full px-[6em] text-[0.9em] flex flex-col gap-2 justify-center items-center">
+            <motion.div
+              variants={title2Variants}
+              initial="hidden"
+              animate="visible"
+              className="flex gap-2 items-center"
+            >
+              <span className="flex self-start"><img className="w-[2em]" src="/icons/location.svg" alt="location" /></span>
+              <p>
+                Our Lady Queen of Peace Parish, Housing Estate Fegge Onitsha By
+                12PM
+              </p>
+            </motion.div>
+            <motion.p
+              variants={title2Variants}
+              initial="hidden"
+              animate="visible"
+              className="flex gap-2 items-center"
+            >
+              <span className="flex self-start"><img className="w-[2em]" src="/icons/food.svg" alt="location" /></span>
+              Reception @ Recreational Center Housing Estate Fegge Onitsha By 3
+              PM
+            </motion.p>
+          </motion.div>
+        )}
+
+        {showText && (
+          <motion.div key="3" className="home__text__para">
             <motion.div
               variants={title2Variants}
               initial="hidden"
@@ -89,7 +116,7 @@ const HomeText = () => {
               animate="visible"
               className="home__text__p2"
             >
-              040125
+              04-JAN-25
             </motion.p>
           </motion.div>
         )}
