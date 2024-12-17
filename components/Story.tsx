@@ -26,7 +26,7 @@ interface storyItemProp {
 
 const StoryItem: React.FC<storyItemProp> = ({ id, title, content, src, isActive }) => {
   return (
-    <div className="flex flex-col items-center font-[jost] w-full justify-center">
+    <div className="flex flex-col h-full items-center font-[jost] w-full justify-center">
       <motion.p
       animate={{
         opacity: isActive? 1: 0,
@@ -65,7 +65,7 @@ const Story: React.FC<storyProp> = ({isActive}) => {
       }}
       transition={{duration:0.5, delay:0.4, ease:"easeInOut"}}
       className="story__title">our story</motion.p>
-      <div className="story__content">
+      <div className="border-[2px] border-red-600 flex-grow w-full overflow-hidden">
         <Swiper
           modules={[Navigation, Pagination, Scrollbar]}
           grabCursor={true}
@@ -75,10 +75,10 @@ const Story: React.FC<storyProp> = ({isActive}) => {
           slideToClickedSlide={true}
           navigation
           // pagination={{ clickable: true }}
-          className="h-full w-full"
+          className="w-full h-full"
         >
           {story.map((item, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide className="h-full" key={index}>
               <StoryItem
                 id={item.id}
                 title={item.title}

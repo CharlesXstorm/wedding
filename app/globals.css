@@ -282,7 +282,7 @@ body {
 }
 
 .story__title{
-  @apply text-[6em] text-[orange] md:text-[8em] lg:text-[3em] font-[CremeEspana];
+  @apply text-[3em] text-[orange] font-[CremeEspana];
 }
 
 .scrollicon {
