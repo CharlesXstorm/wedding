@@ -100,7 +100,7 @@ body {
   /* absolute left-0 bottom-0 h-[0.2em] bg-[orange] w-[80%]  */
 }
 
-.navmenubtn:hover > div{
+.navmenubtn:hover > div {
   left: 0%;
 }
 
@@ -269,20 +269,20 @@ body {
   @apply top-[10%] left-[50%] md:left-[40%] opacity-100 clip-polygon6;
 }
 
-.page__end{
+.page__end {
   @apply absolute bottom-0 w-[60%] h-[2px] bg-[orange];
 }
 
-.story__container{
+.story__container {
   @apply relative flex flex-col text-white items-center w-full h-full bg-black pt-[4em] md:pt-[8em] lg:pt-[4em];
 }
 
-.story__content{
-  @apply w-full  ;
+.story__content {
+  @apply w-full;
 }
 
-.story__title{
-  @apply text-[3em] text-[orange] font-[CremeEspana];
+.story__title {
+  @apply text-[3em] md:text-[6em] lg:text-[3em] text-[orange] font-[CremeEspana];
 }
 
 .scrollicon {
@@ -298,56 +298,71 @@ body {
   background-color: red;
 } */
 
-.swiper-button-next, .swiper-button-prev { 
-  color: white !important; /* Change the color of the buttons */ 
-  background-color: rgba(0, 0, 0, 0.5); /* Add a background color */ 
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important; /* Change the color of the buttons */
+  background-color: rgba(0, 0, 0, 0.5); /* Add a background color */
   /* background-image: url("/icons/scroll-down.svg"); */
-  border-radius: 100%; /* Make the buttons circular */ 
-  width: 1em; 
-  height: 1em; 
+  border-radius: 100%; /* Make the buttons circular */
+  width: 1em;
+  height: 1em;
   padding: 2em;
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: bold;
-} 
-
-.swiper-button-next:hover, .swiper-button-prev:hover { 
-  background-color: rgba(0, 0, 0, 0.8); /* Darken the background on hover */ 
-} 
-
-.swiper-button-next::after, .swiper-button-prev::after { 
-  font-size: 20px; /* Increase the size of the arrow icons */ 
 }
 
-.left__span, .right__span{
-width: 10em;
-padding: 0.2em;
-background-color: white;
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darken the background on hover */
 }
 
-.left__span{
-  animation: leftspanAnimate 0.8s ease-in-out alternate-reverse infinite ;
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px; /* Increase the size of the arrow icons */
 }
 
-.right__span{
-  animation: rightspanAnimate 0.8s ease-in-out alternate-reverse infinite ;
+.left__span,
+.right__span {
+  width: 10em;
+  padding: 0.2em;
+  background-color: white;
 }
 
-@keyframes leftspanAnimate{
-  0%{
+.left__span {
+  animation: leftspanAnimate 0.8s ease-in-out alternate-reverse infinite;
+}
+
+.right__span {
+  animation: rightspanAnimate 0.8s ease-in-out alternate-reverse infinite;
+}
+
+::-webkit-scrollbar {
+  width: 6px; /* Width of the scrollbar */
+}
+::-webkit-scrollbar-track {
+  background: transparent; /* Background of the scrollbar track */
+}
+::-webkit-scrollbar-thumb {
+  background: orange; /* Color of the scrollbar thumb */
+  border-radius: 6px; /* Rounded corners for the scrollbar thumb */
+}
+
+@keyframes leftspanAnimate {
+  0% {
     transform: translateX(-100px);
   }
-  100%{
+  100% {
     transform: translateX(0px);
   }
 }
 
-@keyframes rightspanAnimate{
-  0%{
+@keyframes rightspanAnimate {
+  0% {
     transform: translateX(100px);
   }
-  100%{
+  100% {
     transform: translateX(0px);
   }
 }
@@ -367,14 +382,14 @@ background-color: white;
   }
 }
 
-@media only screen and (max-width: 380px){
-  .story__title{
+@media only screen and (max-width: 380px) {
+  .story__title {
     font-size: 2.5em;
   }
-  .storyitem__title{
+  .storyitem__title {
     font-size: 1.2em;
   }
-  .storyitem__pic{
+  .storyitem__pic {
     width: 100%;
     height: 18em;
   }
