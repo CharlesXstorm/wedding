@@ -18,7 +18,7 @@ import ReactDOM from "react-dom";
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 
 // // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar } from "swiper/modules";
+import { Keyboard, Navigation, Pagination, Scrollbar } from "swiper/modules";
 
 // // Import Swiper styles
 import "swiper/css";
@@ -84,9 +84,9 @@ export default function Home() {
         // slidesPerView: 1,
         keyboard={{
           enabled: true,
-          onlyInViewport: true,
+          // onlyInViewport: true,
         }}
-        modules={[Navigation, Pagination, Scrollbar]}
+        modules={[Navigation, Pagination, Scrollbar, Keyboard]}
         // grabCursor={true}
         spaceBetween={0}
         slidesPerView={1}

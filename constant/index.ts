@@ -86,29 +86,41 @@ export const story = [
   {
     id: 0,
     title: "How We Met",
-    src: "/images/albums/photo2_1.jpg",
+    src: "/images/albums/met.jpg",
+    author: "Clement",
     content:
-      "We met at a mutual friend's party in 2018. It was a rainy evening, and we both reached for the same umbrella. That moment sparked a conversation that lasted the entire night.",
+      "I met her online in 2017. It was in a Chinese students’ group chat where we were discussing about traveling to China. I slipped into her DM from the group chat after observing her intelligible contributions. Our friendship progressed slowly and steadily into us being besties. The first time I saw her in person was in 2019 January when I visited her city for tourism. Fast forward to November 18, 2023, we visited Xi’an for tourism from our separate cities and that’s where our LOVE STORY BEGAN! We decided to date each other after being single for a while. I cherish our friendship. She is my huge support system even before we met in person till infinity",
+    content2: null,
   },
   {
     id: 1,
     title: "First Date",
-    src: "/images/albums/photo2.jpg",
+    src: "/images/albums/firstdate.jpg",
+    author: "Perky",
     content:
-      "Our first date was at a cozy little café downtown. We talked for hours over coffee and pastries, and it felt like we had known each other forever.",
+      "Our first romantic date was over a dinner at a beautiful restaurant where we had a spicy 🌶 burger 🍔 and appreciated the beautiful night lights of Beijing city. After that, We had a beautiful walk in a park. He sure crosses his t’s and dots his i’s when it comes to romance.",
+    content2: null,
   },
   {
     id: 2,
     title: "The Proposal",
-    src: "/images/albums/photo2_3.jpg",
+    src: "/images/albums/proposal.jpg",
+    author: "Clement",
     content:
-      "John proposed during a weekend getaway to the mountains. He popped the question at sunset, with a breathtaking view as our backdrop. It was a magical moment we will never forget.",
+      "We went to Guangzhou for a baecation. That was where I executed my 2-stage proposal. The first stage was personal and the second was with friends. The first proposal was with an antique ring 💍 bearing her initials OP. She told me she liked the ring months back. When I bent the knee and popped the question. She thought it was a joke and left me kneeling down for a while until she returned from the kitchen and saw the seriousness in my face and asked in Chinese 你来真的吗? (Meaning: Are you for real?). Then she laughed so hard and said YES! She said to me that it was one of the most happiest moments in her life. She was too quick to  share the good-news with her close friends but I told her to hold on still until she had taken more demure pictures, and She agreed. Unknown to her that it was just a prelude and a classic proposal awaits her.",
+    content2: {
+      title: "2nd proposal:",
+      content:
+        "On the 15th of June, 2024, I took her to a fancy restaurant for a banquet dinner, that was where she got served! Yet again, I bended the knee with her dream ring. She couldn’t believe her eyes. This time around she laughed and smiled until her cheeks hurts! We shared the happy moments with friends.",
+    },
   },
   {
     id: 3,
     title: "What We Love About Each Other",
-    src: "/images/albums/photo2_1.jpg",
+    author: "Perky",
+    src: "/images/albums/love.jpg",
     content:
-      "John loves Sarah's kindness and her ability to make everyone around.",
+      "We respect and hide nothing from each other because we’re BESTIE while respecting each other’s boundaries. We pray together and support one another. We both love tourism and have made many trips so far together and counting. He’s levelheaded and I’m understanding which is a great pair. I cherish the fact that we can have difficult conversations.",
+    content2: null,
   },
 ];
