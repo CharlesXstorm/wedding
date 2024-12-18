@@ -274,7 +274,7 @@ body {
 }
 
 .story__container {
-  @apply relative flex flex-col text-white items-center w-full h-full bg-black pt-[6em] lg:pt-[1em];
+  @apply relative flex flex-col text-white items-center w-full h-full bg-black pt-[4em] lg:pt-[1em];
 }
 
 .story__content {
