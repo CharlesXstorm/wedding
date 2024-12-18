@@ -345,7 +345,7 @@ body {
   background: transparent; /* Background of the scrollbar track */
 }
 ::-webkit-scrollbar-thumb {
-  background: orange; /* Color of the scrollbar thumb */
+  background: transparent; /* Color of the scrollbar thumb */
   border-radius: 6px; /* Rounded corners for the scrollbar thumb */
 }
 
@@ -382,11 +382,11 @@ body {
   }
 }
 
-@media only screen and (max-width: 840px) {
+/* @media only screen and (max-width: 840px) {
   .storyitem__pic{
     height: 36em;
   }
-}
+} */
 
 @media only screen and (max-width: 480px) {
   .storyitem__pic {
