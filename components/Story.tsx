@@ -71,7 +71,7 @@ const StoryItem: React.FC<storyItemProp> = ({
           // y: isActive? 0: 40
         }}
         transition={{ duration: 0.5, delay: 0.2, ease: "easeInOut" }}
-        className="md:px-[10%] w-[80%] relative md:w-full flex flex-col lg:flex-row lg:gap-4 lg:items-center "
+        className="lg:px-[10%] w-[80%] relative lg:w-full flex flex-col lg:flex-row lg:gap-4 lg:items-center "
       >
         <div className="storyitem__pic w-[100%] lg:w-[50%] mt-[1em] overflow-hidden rounded-[16px]">
           <img className="w-full" src={src} alt="story_pic" />
@@ -128,7 +128,7 @@ const StoryItem: React.FC<storyItemProp> = ({
           )}
         </div>
         {readmore &&
-          <div className="absolute flex justify-center items-center w-[4em] h-[4em] top-[100%] lg:top-[80%] left-[calc(50%-2em)] lg:left-[60%]">
+          <div className="absolute flex justify-center items-center w-[4em] h-[4em] bottom-[15%] left-[calc(100%-2em)] lg:top-[80%] lg:left-[60%]">
             <button onClick={scrollDownHandler} className="w-[3em]">
               <img src="/icons/arrowdown.svg" alt="arrow_down" />
             </button>
