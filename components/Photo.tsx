@@ -7,7 +7,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { photoPage1, photoPage2 } from "@/constant";
+import { photoPage } from "@/constant";
 import Image from "next/image";
 import { LeftSVG } from "@/svg";
 import { AnimatePresence, motion } from "framer-motion";
@@ -258,7 +258,7 @@ const Photo: React.FC<photoProp> = ({isActive}) => {
       <div className="photo__page1">
         {page === 1 && (
           <div key="1">
-            {photoPage1.map((item, index) => (
+            {photoPage[0].map((item, index) => (
               <PhotoItem
                 key={index}
                 className={item.className}
@@ -274,7 +274,7 @@ const Photo: React.FC<photoProp> = ({isActive}) => {
 
         {page === 2 && (
           <div key="2">
-            {photoPage2.map((item, index) => (
+            {photoPage[1].map((item, index) => (
               <PhotoItem
                 key={index}
                 className={item.className}
