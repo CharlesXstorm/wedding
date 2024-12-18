@@ -111,7 +111,7 @@ export const story = [
     content2: {
       title: "2nd proposal:",
       content:
-        "On the 15th of June, 2024, I took her to a fancy restaurant for a banquet dinner, that was where she got served! Yet again, I bended the knee with her dream ring. She couldn’t believe her eyes. This time around she laughed and smiled until her cheeks hurts! We shared the happy moments with friends.",
+        "On the 15th of June, 2024, I took her to a fancy restaurant for a banquet dinner, that was where she got served! Yet again, I bent the knee with her dream ring. She couldn’t believe her eyes. This time around she laughed and smiled until her cheeks hurts! We shared the happy moments with friends.",
     },
   },
   {
