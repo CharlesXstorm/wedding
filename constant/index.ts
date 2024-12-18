@@ -4,83 +4,352 @@ export const nav = [
   { id: 3, title: "WISH", link: "wish" },
 ];
 
-export const photoPage1 = [
+export const photoPage = [
+  [
+    {
+      className: "pic1",
+      classNameInit: "picinit1",
+      src: "/images/albums/photo1_1.jpg",
+      alt: "photo1",
+    },
+    {
+      className: "pic2",
+      classNameInit: "picinit2",
+      src: "/images/albums/photo1_2.jpg",
+      alt: "photo2",
+    },
+    {
+      className: "pic3",
+      classNameInit: "picinit3",
+      src: "/images/albums/photo1_3.jpg",
+      alt: "photo3",
+    },
+    {
+      className: "pic4",
+      classNameInit: "picinit4",
+      src: "/images/albums/photo1_4.jpg",
+      alt: "photo4",
+    },
+    {
+      className: "pic5",
+      classNameInit: "picinit5",
+      src: "/images/albums/photo1_5.jpg",
+      alt: "photo2",
+    },
+    {
+      className: "pic6",
+      classNameInit: "picinit6",
+      src: "/images/albums/photo1_6.jpg",
+      alt: "photo3",
+    },
+  ],
+  [
+      {
+        className: "pic1",
+        classNameInit: "picinit1",
+        src: "/images/albums/photo2_1.jpg",
+        alt: "photo1",
+      },
+      {
+        className: "pic2",
+        classNameInit: "picinit2",
+        src: "/images/albums/photo2_2.jpg",
+        alt: "photo2",
+      },
+      {
+        className: "pic3",
+        classNameInit: "picinit3",
+        src: "/images/albums/photo2_3.jpg",
+        alt: "photo3",
+      },
+      {
+        className: "pic4",
+        classNameInit: "picinit4",
+        src: "/images/albums/photo2_4.jpg",
+        alt: "photo4",
+      },
+      {
+        className: "pic5",
+        classNameInit: "picinit5",
+        src: "/images/albums/photo2_5.jpg",
+        alt: "photo5",
+      },
+      {
+        className: "pic6",
+        classNameInit: "picinit6",
+        src: "/images/albums/photo2_6.jpg",
+        alt: "photo6",
+      },
+  ],
+  [
+    {
+      className: "pic1",
+      classNameInit: "picinit1",
+      src: "/images/albums/photo3_1.jpg",
+      alt: "photo1",
+    },
+    {
+      className: "pic2",
+      classNameInit: "picinit2",
+      src: "/images/albums/photo3_2.jpg",
+      alt: "photo2",
+    },
+    {
+      className: "pic3",
+      classNameInit: "picinit3",
+      src: "/images/albums/photo3_3.jpg",
+      alt: "photo3",
+    },
+    {
+      className: "pic4",
+      classNameInit: "picinit4",
+      src: "/images/albums/photo3_4.jpg",
+      alt: "photo4",
+    },
+    {
+      className: "pic5",
+      classNameInit: "picinit5",
+      src: "/images/albums/photo3_5.jpg",
+      alt: "photo5",
+    },
+    {
+      className: "pic6",
+      classNameInit: "picinit6",
+      src: "/images/albums/photo3_6.jpg",
+      alt: "photo6",
+    },
+],
+[
   {
     className: "pic1",
     classNameInit: "picinit1",
-    src: "/images/albums/photo1.jpg",
+    src: "/images/albums/photo4_1.jpg",
     alt: "photo1",
   },
   {
     className: "pic2",
     classNameInit: "picinit2",
-    src: "/images/albums/photo2.jpg",
+    src: "/images/albums/photo4_2.jpg",
     alt: "photo2",
   },
   {
     className: "pic3",
     classNameInit: "picinit3",
-    src: "/images/albums/photo3.jpg",
+    src: "/images/albums/photo4_3.jpg",
     alt: "photo3",
   },
   {
     className: "pic4",
     classNameInit: "picinit4",
-    src: "/images/albums/photo4.jpg",
+    src: "/images/albums/photo4_4.jpg",
     alt: "photo4",
   },
   {
     className: "pic5",
     classNameInit: "picinit5",
-    src: "/images/albums/photo2.jpg",
-    alt: "photo2",
-  },
-  {
-    className: "pic6",
-    classNameInit: "picinit6",
-    src: "/images/albums/photo3.jpg",
-    alt: "photo3",
-  },
-];
-
-export const photoPage2 = [
-  {
-    className: "pic1",
-    classNameInit: "picinit1",
-    src: "/images/albums/photo2_1.jpg",
-    alt: "photo1",
-  },
-  {
-    className: "pic2",
-    classNameInit: "picinit2",
-    src: "/images/albums/photo2_2.jpg",
-    alt: "photo2",
-  },
-  {
-    className: "pic3",
-    classNameInit: "picinit3",
-    src: "/images/albums/photo2_3.jpg",
-    alt: "photo3",
-  },
-  {
-    className: "pic4",
-    classNameInit: "picinit4",
-    src: "/images/albums/photo2_4.jpg",
-    alt: "photo4",
-  },
-  {
-    className: "pic5",
-    classNameInit: "picinit5",
-    src: "/images/albums/photo2_5.jpg",
+    src: "/images/albums/photo4_5.jpg",
     alt: "photo5",
   },
   {
     className: "pic6",
     classNameInit: "picinit6",
-    src: "/images/albums/photo2_6.jpg",
+    src: "/images/albums/photo4_6.jpg",
     alt: "photo6",
   },
+],
+[
+  {
+    className: "pic1",
+    classNameInit: "picinit1",
+    src: "/images/albums/photo5_1.jpg",
+    alt: "photo1",
+  },
+  {
+    className: "pic2",
+    classNameInit: "picinit2",
+    src: "/images/albums/photo5_2.jpg",
+    alt: "photo2",
+  },
+  {
+    className: "pic3",
+    classNameInit: "picinit3",
+    src: "/images/albums/photo5_3.jpg",
+    alt: "photo3",
+  },
+  {
+    className: "pic4",
+    classNameInit: "picinit4",
+    src: "/images/albums/photo5_4.jpg",
+    alt: "photo4",
+  },
+  {
+    className: "pic5",
+    classNameInit: "picinit5",
+    src: "/images/albums/photo5_5.jpg",
+    alt: "photo5",
+  },
+  {
+    className: "pic6",
+    classNameInit: "picinit6",
+    src: "/images/albums/photo5_6.jpg",
+    alt: "photo6",
+  },
+],
+[
+  {
+    className: "pic1",
+    classNameInit: "picinit1",
+    src: "/images/albums/photo6_1.jpg",
+    alt: "photo1",
+  },
+  {
+    className: "pic2",
+    classNameInit: "picinit2",
+    src: "/images/albums/photo6_2.jpg",
+    alt: "photo2",
+  },
+  {
+    className: "pic3",
+    classNameInit: "picinit3",
+    src: "/images/albums/photo6_3.jpg",
+    alt: "photo3",
+  },
+  {
+    className: "pic4",
+    classNameInit: "picinit4",
+    src: "/images/albums/photo6_4.jpg",
+    alt: "photo4",
+  },
+  {
+    className: "pic5",
+    classNameInit: "picinit5",
+    src: "/images/albums/photo6_5.jpg",
+    alt: "photo5",
+  },
+  {
+    className: "pic6",
+    classNameInit: "picinit6",
+    src: "/images/albums/photo6_6.jpg",
+    alt: "photo6",
+  },
+],
+[
+  {
+    className: "pic1",
+    classNameInit: "picinit1",
+    src: "/images/albums/photo7_1.jpg",
+    alt: "photo1",
+  },
+  {
+    className: "pic2",
+    classNameInit: "picinit2",
+    src: "/images/albums/photo7_2.jpg",
+    alt: "photo2",
+  },
+  {
+    className: "pic3",
+    classNameInit: "picinit3",
+    src: "/images/albums/photo7_3.jpg",
+    alt: "photo3",
+  },
+  {
+    className: "pic4",
+    classNameInit: "picinit4",
+    src: "/images/albums/photo7_4.jpg",
+    alt: "photo4",
+  },
+  {
+    className: "pic5",
+    classNameInit: "picinit5",
+    src: "/images/albums/photo7_5.jpg",
+    alt: "photo5",
+  },
+  {
+    className: "pic6",
+    classNameInit: "picinit6",
+    src: "/images/albums/photo7_6.jpg",
+    alt: "photo6",
+  },
+],
+[
+  {
+    className: "pic1",
+    classNameInit: "picinit1",
+    src: "/images/albums/photo8_1.jpg",
+    alt: "photo1",
+  },
+  {
+    className: "pic2",
+    classNameInit: "picinit2",
+    src: "/images/albums/photo8_2.jpg",
+    alt: "photo2",
+  },
+  {
+    className: "pic3",
+    classNameInit: "picinit3",
+    src: "/images/albums/photo8_3.jpg",
+    alt: "photo3",
+  },
+  {
+    className: "pic4",
+    classNameInit: "picinit4",
+    src: "/images/albums/photo8_4.jpg",
+    alt: "photo4",
+  },
+  {
+    className: "pic5",
+    classNameInit: "picinit5",
+    src: "/images/albums/photo8_5.jpg",
+    alt: "photo5",
+  },
+  {
+    className: "pic6",
+    classNameInit: "picinit6",
+    src: "/images/albums/photo8_6.jpg",
+    alt: "photo6",
+  },
+],
+[
+  {
+    className: "pic1",
+    classNameInit: "picinit1",
+    src: "/images/albums/photo9_1.jpg",
+    alt: "photo1",
+  },
+  {
+    className: "pic2",
+    classNameInit: "picinit2",
+    src: "/images/albums/photo9_2.jpg",
+    alt: "photo2",
+  },
+  {
+    className: "pic3",
+    classNameInit: "picinit3",
+    src: "/images/albums/photo9_3.jpg",
+    alt: "photo3",
+  },
+  {
+    className: "pic4",
+    classNameInit: "picinit4",
+    src: "/images/albums/photo9_4.jpg",
+    alt: "photo4",
+  },
+  {
+    className: "pic5",
+    classNameInit: "picinit5",
+    src: "/images/albums/photo9_5.jpg",
+    alt: "photo5",
+  },
+  {
+    className: "pic6",
+    classNameInit: "picinit6",
+    src: "/images/albums/photo9_6.jpg",
+    alt: "photo6",
+  },
+],
 ];
+
+// export const photoPage2 = ;
 
 export const story = [
   {

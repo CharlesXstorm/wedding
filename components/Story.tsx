@@ -89,51 +89,15 @@ const StoryItem: React.FC<storyItemProp> = ({
               {" "}
               <p className="pt-[1em] w-[100%] paragraph">
                 {content}
-                {/* {isMobile
-                  ? content.length > 150
-                    ? `${content.slice(0, 150)}...`
-                    : content
-                  : content.length > 350
-                  ? `${content.slice(0, 350)}...`
-                  : content} */}
               </p>
               <div className="pt-[1em] w-[100%]">
                 <h1 className="font-bold text-[orange]">{content2?.title}</h1>
                 <p>{content2?.content}</p>
               </div>
-              {/* {((isMobile && content.length > 150) || content.length > 350) && (
-                <span>
-                  <button
-                    onClick={readHandler}
-                    className="text-blue-600 font-bold"
-                  >
-                    read more
-                  </button>
-                </span>
-              )} */}
             </>
           )}
 
-          {/* { (
-            <>
-              {" "}
-              <p className="pt-[1em] w-[100%]">{content}</p>
-              <div className="pt-[1em] w-[100%]">
-                <h1 className="font-bold text-[orange]">{content2?.title}</h1>
-                <p>{content2?.content}</p>
-              </div>
-              {
-                <span>
-                  <button
-                    onClick={readHandler}
-                    className="text-blue-600 font-bold"
-                  >
-                    see less
-                  </button>
-                </span>
-              }
-            </>
-          )} */}
+
         </div>
         {((isMobile && content.length > 150) || content.length > 350) &&  (
           <>
