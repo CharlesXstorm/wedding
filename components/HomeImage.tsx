@@ -8,7 +8,7 @@ const HomeImage = () => {
   const { imageLoaded, setImageLoaded } = useStore();
   const isMobile = useIsMobile()
 
-  const srcList = ["/images/heroDesk1.jpg","/images/heroMobile3.jpg"]
+  const srcList = ["/images/heroDesk.jpg","/images/heroMobile.jpg"]
 
   return (
     <div className="home__image">
