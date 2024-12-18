@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -26,7 +26,7 @@ interface storyItemProp {
   title: string;
   author: string;
   content: string;
-  content2: {title:string, content:string} | null;
+  content2: { title: string; content: string } | null;
   src: string;
   isActive: boolean;
   isMobile: boolean;
@@ -44,8 +44,13 @@ const StoryItem: React.FC<storyItemProp> = ({
 }) => {
   const [readmore, setReadmore] = useState(false);
 
+  const readRef = useRef<HTMLDivElement>(null);
+
   const readHandler = () => {
     setReadmore((prev) => !prev);
+  };
+  const scrollDownHandler = () => {
+    readRef.current?.scrollBy({ top: 60, behavior: "smooth" });
   };
   return (
     <div className="flex flex-col h-full items-center font-[jost] w-full ">
@@ -55,7 +60,7 @@ const StoryItem: React.FC<storyItemProp> = ({
           y: isActive ? 0 : 40,
         }}
         transition={{ duration: 0.3, delay: 0.6, ease: "easeInOut" }}
-        className=" font-bold text-[2em] md:text-[2.5em] w-[80%]"
+        className="storyitem__title font-bold text-[1.5em] lg:text-[1.5em] w-[80%]"
       >
         {title}
       </motion.p>
@@ -66,26 +71,29 @@ const StoryItem: React.FC<storyItemProp> = ({
           // y: isActive? 0: 40
         }}
         transition={{ duration: 0.5, delay: 0.2, ease: "easeInOut" }}
-        className="md:px-[10%] w-[80%] h-[90%] md:w-full flex flex-col md:flex-row md:gap-4 md:items-center "
+        className="md:px-[10%] w-[80%] relative md:w-full flex flex-col lg:flex-row lg:gap-4 lg:items-center "
       >
-        <div className="storyitem__pic h-[44em] md:h-[24em] lg:h-[16em] xl:h-[24em] w-[100%] lg:w-[50%] mt-[1em] overflow-hidden rounded-[16px]">
+        <div className="storyitem__pic w-[100%] lg:w-[50%] mt-[1em] overflow-hidden rounded-[16px]">
           <img className="w-full" src={src} alt="story_pic" />
         </div>
-        <div className="storyitem__pic flex flex-col h-full h-[24em] lg:h-[16em] xl:h-[24em] w-[100%] mt-[1em] overflow-auto">
+        <div
+          ref={readRef}
+          className="storyitem__content flex flex-col h-[12em] md:h-[8em] lg:h-[12em] w-[100%] mt-[1em] overflow-auto"
+        >
           <i className="font-bold text-[orange]">{`${author} -`}</i>
           {!readmore && (
             <>
               {" "}
               <p className="pt-[1em] w-[100%] paragraph">
                 {isMobile
-                  ? content.length > 250
-                    ? `${content.slice(0, 250)}...`
+                  ? content.length > 150
+                    ? `${content.slice(0, 150)}...`
                     : content
-                  : content.length > 450
-                  ? `${content.slice(0, 450)}...`
+                  : content.length > 350
+                  ? `${content.slice(0, 350)}...`
                   : content}
               </p>
-              {((isMobile && content.length > 250) || content.length > 450) && (
+              {((isMobile && content.length > 150) || content.length > 350) && (
                 <span>
                   <button
                     onClick={readHandler}
@@ -119,6 +127,13 @@ const StoryItem: React.FC<storyItemProp> = ({
             </>
           )}
         </div>
+        {readmore &&
+          <div className="absolute flex justify-center items-center w-[4em] h-[4em] top-[100%] lg:top-[80%] left-[calc(50%-2em)] lg:left-[60%]">
+            <button onClick={scrollDownHandler} className="w-[3em]">
+              <img src="/icons/arrowdown.svg" alt="arrow_down" />
+            </button>
+          </div>
+        }
       </motion.div>
     </div>
   );
