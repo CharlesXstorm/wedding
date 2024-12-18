@@ -49,6 +49,9 @@ const StoryItem: React.FC<storyItemProp> = ({
   const readHandler = () => {
     setReadmore((prev) => !prev);
   };
+  const scrollUpHandler = () => {
+    readRef.current?.scrollBy({ top: -60, behavior: "smooth" });
+  };
   const scrollDownHandler = () => {
     readRef.current?.scrollBy({ top: 60, behavior: "smooth" });
   };
@@ -81,19 +84,24 @@ const StoryItem: React.FC<storyItemProp> = ({
           className="storyitem__content flex flex-col h-[12em] md:h-[8em] lg:h-[12em] w-[100%] mt-[1em] overflow-auto"
         >
           <i className="font-bold text-[orange]">{`${author} -`}</i>
-          {!readmore && (
+          {(
             <>
               {" "}
               <p className="pt-[1em] w-[100%] paragraph">
-                {isMobile
+                {content}
+                {/* {isMobile
                   ? content.length > 150
                     ? `${content.slice(0, 150)}...`
                     : content
                   : content.length > 350
                   ? `${content.slice(0, 350)}...`
-                  : content}
+                  : content} */}
               </p>
-              {((isMobile && content.length > 150) || content.length > 350) && (
+              <div className="pt-[1em] w-[100%]">
+                <h1 className="font-bold text-[orange]">{content2?.title}</h1>
+                <p>{content2?.content}</p>
+              </div>
+              {/* {((isMobile && content.length > 150) || content.length > 350) && (
                 <span>
                   <button
                     onClick={readHandler}
@@ -102,11 +110,11 @@ const StoryItem: React.FC<storyItemProp> = ({
                     read more
                   </button>
                 </span>
-              )}
+              )} */}
             </>
           )}
 
-          {readmore && (
+          {/* { (
             <>
               {" "}
               <p className="pt-[1em] w-[100%]">{content}</p>
@@ -125,15 +133,22 @@ const StoryItem: React.FC<storyItemProp> = ({
                 </span>
               }
             </>
-          )}
+          )} */}
         </div>
-        {readmore &&
-          <div className="absolute flex justify-center items-center w-[4em] h-[4em] bottom-[15%] left-[calc(100%-2em)] lg:top-[80%] lg:left-[60%]">
-            <button onClick={scrollDownHandler} className="w-[3em]">
-              <img src="/icons/arrowdown.svg" alt="arrow_down" />
-            </button>
-          </div>
-        }
+        {((isMobile && content.length > 150) || content.length > 350) &&  (
+          <>
+            <div className="absolute flex justify-center items-center rotate-180 w-[4em] h-[4em] bottom-[16%] left-[calc(100%-2em)] lg:bottom-[40%] lg:left-[calc(100%-8em)]">
+              <button onClick={scrollUpHandler} className="w-[3em]">
+                <img src="/icons/arrowdown.svg" alt="arrow_down" />
+              </button>
+            </div>
+            <div className="absolute flex justify-center items-center w-[4em] h-[4em] bottom-[6%] left-[calc(100%-2em)] lg:bottom-[15%] lg:left-[calc(100%-8em)]">
+              <button onClick={scrollDownHandler} className="w-[3em]">
+                <img src="/icons/arrowdown.svg" alt="arrow_down" />
+              </button>
+            </div>
+          </>
+        )}
       </motion.div>
     </div>
   );
