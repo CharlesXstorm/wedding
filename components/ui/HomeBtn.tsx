@@ -5,13 +5,13 @@ import React from "react";
 import { SwiperClass } from "swiper/react";
 
 interface homeProp {
-  swiper: SwiperClass | null | undefined;
+  // swiper: SwiperClass | null | undefined;
 }
 
-const HomeBtn: React.FC<homeProp> = ({ swiper }) => {
+const HomeBtn: React.FC<homeProp> = () => {
   const { navChange } = useStore();
   const scrollToView = () => {
-    swiper?.slideTo(0);
+    // swiper?.slideTo(0);
   };
   return (
     <div>
