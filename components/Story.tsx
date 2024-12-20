@@ -84,22 +84,33 @@ const StoryItem: React.FC<storyItemProp> = ({
           className="storyitem__content flex flex-col h-[12em] md:h-[8em] lg:h-[12em] w-[100%] mt-[1em] overflow-auto"
         >
           <i className="font-bold text-[orange]">{`${author} -`}</i>
-          {(
+          {!readmore && (
             <>
               {" "}
               <p className="pt-[1em] w-[100%] paragraph">
-                {content}
+                {isMobile && content.length > 150
+                  ? `${content.slice(0, 150)}...`
+                  : content.length > 350
+                  ? `${content.slice(0, 350)}...`
+                  : content}
               </p>
+              <span><button onClick={readHandler} className="text-blue-600 font-bold"><i>read more</i></button></span>
+            </>
+          )}
+
+          {readmore && (
+            <>
+              {" "}
+              <p className="pt-[1em] w-[100%] paragraph">{content}</p>
               <div className="pt-[1em] w-[100%]">
                 <h1 className="font-bold text-[orange]">{content2?.title}</h1>
                 <p>{content2?.content}</p>
               </div>
+              <span><button onClick={readHandler} className="text-blue-600 font-bold"><i>see less</i></button></span>
             </>
           )}
-
-
         </div>
-        {((isMobile && content.length > 150) || content.length > 350) &&  (
+        {/* {((isMobile && content.length > 150) || content.length > 350) &&  (
           <>
             <div className="absolute flex justify-center items-center rotate-180 w-[4em] h-[4em] bottom-[16%] left-[calc(100%-2em)] lg:bottom-[40%] lg:left-[calc(100%-8em)]">
               <button onClick={scrollUpHandler} className="w-[3em]">
@@ -112,7 +123,7 @@ const StoryItem: React.FC<storyItemProp> = ({
               </button>
             </div>
           </>
-        )}
+        )} */}
       </motion.div>
     </div>
   );
@@ -135,13 +146,11 @@ const Story: React.FC<storyProp> = ({ isActive }) => {
       <div className="flex-grow w-full overflow-hidden">
         <Swiper
           modules={[Navigation, Pagination, Scrollbar]}
-          // grabCursor={true}
           spaceBetween={50}
           slidesPerView={1}
           speed={800}
           slideToClickedSlide={true}
           navigation
-          // pagination={{ clickable: true }}
           className="w-full h-full"
         >
           {story.map((item, index) => (
