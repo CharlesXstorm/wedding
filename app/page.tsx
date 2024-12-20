@@ -27,7 +27,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 export default function Home() {
-  // const { setNavChange, setNavScrollChange } = useStore();
+  const { setNavChange, setNavScrollChange } = useStore();
   const [isActive, setIsActive] = useState({
     home_: true,
     story: true,
@@ -93,7 +93,6 @@ export default function Home() {
               behavior: "smooth",
             });
           }
-          // console.log(storyRef?.current?.getBoundingClientRect().bottom)
         }
         // ////////////////////////
         //         console.log(
@@ -112,31 +111,33 @@ export default function Home() {
     });
   };
 
-  // const trackElement = () => {
-  //   const photoEl = document.querySelector("#photo");
-  //   const homeEl = document.querySelector("#home_");
-  //   const homeScroll = Math.ceil(homeEl?.getBoundingClientRect().top ?? 0);
-  //   const photoScroll = Math.ceil(photoEl?.getBoundingClientRect().top ?? 0);
-  //   homeScroll < -50 ? setNavScrollChange(true) : setNavScrollChange(false);
-  //   photoScroll < -500 ? setNavChange(true) : setNavChange(false);
-  // };
+  const scrollHandler =()=>{
+    if(homeRef.current){
+      if(homeRef?.current?.getBoundingClientRect().top < -5){
+        setNavScrollChange(true)
+      }else{
+        setNavScrollChange(false)
+      }
+    }
+
+    if(wishRef.current){
+      if(wishRef?.current?.getBoundingClientRect().top < 100){
+        setNavChange(true)
+      }else{
+        setNavChange(false)
+      }
+    }
+
+  }
 
   useEffect(() => {
     window.addEventListener("wheel", handleSlide);
-    // window.addEventListener("scroll", handleSlide);
+    window.addEventListener("scroll",scrollHandler)
 
-    // removeEventListener("wheel", handleSlide);
-    // removeEventListener("scroll", handleSlide);
-
-    // if (mainRef.current) {
-    //   const scroll = new LocomotiveScroll({
-    //     el: document.querySelector(`[data-scroll-container]`),
-    //     smooth: true,
-    //     multiplier: 0.2,
-    //   } as ILocomotiveScrollOptions);
-    // }
-
-    return () => removeEventListener("wheel", handleSlide);
+    return () => {
+      removeEventListener("wheel", handleSlide);
+      removeEventListener("scroll", scrollHandler);
+    }
   }, []);
 
   return (
@@ -146,7 +147,7 @@ export default function Home() {
       ref={mainRef}
       data-scroll-container
     >
-      {/* {<Loader />} */}
+      {<Loader />}
       <Nav />
       <HomeBtn />
       <div

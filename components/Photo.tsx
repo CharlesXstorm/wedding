@@ -223,11 +223,18 @@ const PhotoItem: React.FC<photoitemProps> = ({
         }}
       >
         <div className="absolute top-0 left-0 w-[100%] h-[100%] bg-black opacity-80 "></div>
-        <Image
+        {/* <Image
           className="photo__image object-contain z-[2]"
           src={src}
           width={120}
           height={120}
+          alt={alt}
+        /> */}
+        <img
+          className="photo__image object-contain z-[2]"
+          src={src}
+          // width={120}
+          // height={120}
           alt={alt}
         />
       </div>
