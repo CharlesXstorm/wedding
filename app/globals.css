@@ -86,7 +86,7 @@ body {
 }
 
 .navbtn > button {
-  @apply flex self-end md:self-center w-[4em] lg:w-[5em] mb-[5em];
+  @apply flex self-end md:self-center w-[4em] lg:w-[5em] mb-[40vh] md:mb-[0vh];
 }
 
 .navmenubtn > div {

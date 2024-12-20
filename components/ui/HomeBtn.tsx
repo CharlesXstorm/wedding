@@ -11,7 +11,8 @@ interface homeProp {
 const HomeBtn: React.FC<homeProp> = () => {
   const { navChange } = useStore();
   const scrollToView = () => {
-    // swiper?.slideTo(0);
+    const homeDiv = document.getElementById("home_");
+    homeDiv?.scrollIntoView({ behavior: "smooth" });
   };
   return (
     <div>

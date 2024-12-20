@@ -27,10 +27,10 @@ useEffect(()=>{
         honour us with a gift instead, please do send it as cash to the account below.
       </p>
 
-      <div className="pt-6 wish__text items-center">
-      <p><span className="pr-2 inline-block"><img className="w-[2em]" src="/icons/bank.svg" alt="bank" /></span><strong>Bank Name:</strong> GT Bank </p>
-      <p><span className="pr-2 inline-block"><img className="w-[2em]" src="/icons/num.svg" alt="bank" /></span><strong>Account Number:</strong> 0426018947 </p>
-      <p><span className="pr-2 inline-block"><img className="w-[2em]" src="/icons/account.svg" alt="bank" /></span><strong>Account Name:</strong> Ikeagwuonu Onyekwere Clement </p>
+      <div className="pt-6 flex flex-col w-full gap-4 items-center">
+      <p className="w-[90%] lg:w-[50%]"><span className="pr-2 inline-block"><img className="w-[1em]" src="/icons/bank.svg" alt="bank" /></span><strong>Bank Name:</strong> GT Bank </p>
+      <p className="w-[90%] lg:w-[50%]"><span className="pr-2 inline-block"><img className="w-[1em]" src="/icons/num.svg" alt="bank" /></span><strong>Account Number:</strong> 0426018947 </p>
+      <p className="w-[90%] lg:w-[50%]"><span className="pr-2 inline-block"><img className="w-[1em]" src="/icons/account.svg" alt="bank" /></span><strong>Account Name:</strong> Ikeagwuonu Onyekwere </p>
 
       </div>
     </div>
