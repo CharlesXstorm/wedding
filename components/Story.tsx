@@ -58,10 +58,13 @@ const StoryItem: React.FC<storyItemProp> = ({
   return (
     <div className="flex flex-col h-full items-center font-[jost] w-full ">
       <motion.p
-        animate={{
-          opacity: isActive ? 1 : 0,
-          y: isActive ? 0 : 40,
+       initial={{opacity:0, y:40}}
+
+        whileInView={{
+          opacity: 1,
+          y: 0,
         }}
+        viewport={{once: true}}
         transition={{ duration: 0.3, delay: 0.6, ease: "easeInOut" }}
         className="storyitem__title font-bold text-[1.5em] lg:text-[1.5em] w-[80%]"
       >
@@ -69,10 +72,12 @@ const StoryItem: React.FC<storyItemProp> = ({
       </motion.p>
 
       <motion.div
-        animate={{
-          opacity: isActive ? 1 : 0,
-          // y: isActive? 0: 40
+        
+        initial={{opacity:0}}
+        whileInView={{
+          opacity: 1,
         }}
+        viewport={{once: true}}
         transition={{ duration: 0.5, delay: 0.2, ease: "easeInOut" }}
         className="lg:px-[10%] w-[80%] relative lg:w-full flex flex-col lg:flex-row lg:gap-4 lg:items-center "
       >
@@ -134,10 +139,13 @@ const Story: React.FC<storyProp> = ({ isActive }) => {
   return (
     <div className="story__container">
       <motion.p
-        animate={{
-          opacity: isActive ? 1 : 0,
-          y: isActive ? 0 : 40,
+        
+        initial={{opacity:0, y:40}}
+        whileInView={{
+          opacity: 1,
+          y: 0,
         }}
+        viewport={{once: true}}
         transition={{ duration: 0.5, delay: 0.4, ease: "easeInOut" }}
         className="story__title"
       >
