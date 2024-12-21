@@ -16,10 +16,12 @@ useEffect(()=>{
   return (
     <div className="wish__contain">
       <motion.div 
-      animate={{
-        opacity: isActive? 1: 0,
-        y: isActive? 0: 40
-      }}
+        initial={{opacity:0, y:40}}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        viewport={{once: true}}
       transition={{duration:0.5, delay:0.4, ease:"easeInOut"}}
       className="wish__title">Wish</motion.div>
       <p className="wish__text">
